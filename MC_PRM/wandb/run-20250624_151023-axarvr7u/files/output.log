@@ -1,8 +1,0 @@
-[Epoch 1/4] train=0.0963  val=0.0659
-[CKPT] Saved ⇒ checkpoints/gsm8k/ori_mse/best_prm.pt
-[Epoch 2/4] train=0.0912  val=0.0706
-[Epoch 3/4] train=0.0943  val=0.0650
-[CKPT] Saved ⇒ checkpoints/gsm8k/ori_mse/best_prm.pt
-[Epoch 4/4] train=0.0921  val=0.0674
-[CKPT] Saved ⇒ checkpoints/gsm8k/ori_mse/last_prm.pt
-Training complete. Loss history: {'train': [0.09626438319683076, 0.09118595272302628, 0.09434757903218269, 0.0921447977423668], 'val': [0.0658789575099945, 0.07062982022762299, 0.0650462806224823, 0.06738356500864029]}
