@@ -1,0 +1,27 @@
+Traceback (most recent call last):
+  File "/home/leena/ccc_eval/mcts_prm/PRMDataset/main_cont.py", line 44, in <module>
+    main()
+    ~~~~^^
+  File "/home/leena/ccc_eval/mcts_prm/PRMDataset/main_cont.py", line 40, in main
+    history = trainer.fit(gsm8k_train, gsm8k_val)
+  File "/home/leena/ccc_eval/mcts_prm/PRMDataset/prmtrainer.py", line 127, in fit
+    tr_loss = self._run_epoch(train_loader, train=True,  epoch_idx=ep)
+  File "/home/leena/ccc_eval/mcts_prm/PRMDataset/prmtrainer.py", line 90, in _run_epoch
+    loss.backward()
+    ~~~~~~~~~~~~~^^
+  File "/home/leena/anaconda3/envs/peer/lib/python3.13/site-packages/torch/_tensor.py", line 648, in backward
+    torch.autograd.backward(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        self, gradient, retain_graph, create_graph, inputs=inputs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/leena/anaconda3/envs/peer/lib/python3.13/site-packages/torch/autograd/__init__.py", line 346, in backward
+    grad_tensors_ = _make_grads(tensors, grad_tensors_, is_grads_batched=False)
+  File "/home/leena/anaconda3/envs/peer/lib/python3.13/site-packages/torch/autograd/__init__.py", line 221, in _make_grads
+    torch.ones_like(out, memory_format=torch.preserve_format)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: CUDA error: device-side assert triggered
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.

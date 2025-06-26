@@ -1,0 +1,15 @@
+{"time":"2025-06-24T15:10:23.307966959+09:00","level":"INFO","msg":"stream: starting","core version":"0.19.10","symlink path":"/home/leena/ccc_eval/mcts_prm/PRMDataset/wandb/run-20250624_151023-axarvr7u/logs/debug-core.log"}
+{"time":"2025-06-24T15:10:23.657649607+09:00","level":"INFO","msg":"created new stream","id":"axarvr7u"}
+{"time":"2025-06-24T15:10:23.657727441+09:00","level":"INFO","msg":"stream: started","id":"axarvr7u"}
+{"time":"2025-06-24T15:10:23.657754234+09:00","level":"INFO","msg":"writer: Do: started","stream_id":"axarvr7u"}
+{"time":"2025-06-24T15:10:23.657777023+09:00","level":"INFO","msg":"sender: started","stream_id":"axarvr7u"}
+{"time":"2025-06-24T15:10:23.65777469+09:00","level":"INFO","msg":"handler: started","stream_id":"axarvr7u"}
+{"time":"2025-06-24T15:10:23.989896655+09:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-06-24T15:17:18.136426775+09:00","level":"INFO","msg":"stream: closing","id":"axarvr7u"}
+{"time":"2025-06-24T15:17:18.136467446+09:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-06-24T15:17:18.136540488+09:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-06-24T15:17:18.849853038+09:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-06-24T15:17:19.12234354+09:00","level":"INFO","msg":"handler: closed","stream_id":"axarvr7u"}
+{"time":"2025-06-24T15:17:19.12237739+09:00","level":"INFO","msg":"writer: Close: closed","stream_id":"axarvr7u"}
+{"time":"2025-06-24T15:17:19.12242167+09:00","level":"INFO","msg":"sender: closed","stream_id":"axarvr7u"}
+{"time":"2025-06-24T15:17:19.122447581+09:00","level":"INFO","msg":"stream: closed","id":"axarvr7u"}

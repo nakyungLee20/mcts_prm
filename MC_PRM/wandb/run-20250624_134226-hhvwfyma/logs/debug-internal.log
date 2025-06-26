@@ -1,0 +1,15 @@
+{"time":"2025-06-24T13:42:26.063977585+09:00","level":"INFO","msg":"stream: starting","core version":"0.19.10","symlink path":"/home/leena/ccc_eval/mcts_prm/PRMDataset/wandb/run-20250624_134226-hhvwfyma/logs/debug-core.log"}
+{"time":"2025-06-24T13:42:26.62636101+09:00","level":"INFO","msg":"created new stream","id":"hhvwfyma"}
+{"time":"2025-06-24T13:42:26.626448389+09:00","level":"INFO","msg":"stream: started","id":"hhvwfyma"}
+{"time":"2025-06-24T13:42:26.626494083+09:00","level":"INFO","msg":"handler: started","stream_id":"hhvwfyma"}
+{"time":"2025-06-24T13:42:26.626485665+09:00","level":"INFO","msg":"sender: started","stream_id":"hhvwfyma"}
+{"time":"2025-06-24T13:42:26.626471316+09:00","level":"INFO","msg":"writer: Do: started","stream_id":"hhvwfyma"}
+{"time":"2025-06-24T13:42:26.89469123+09:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-06-24T13:42:38.048078069+09:00","level":"INFO","msg":"stream: closing","id":"hhvwfyma"}
+{"time":"2025-06-24T13:42:38.04812352+09:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-06-24T13:42:38.048188843+09:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-06-24T13:42:38.843445516+09:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-06-24T13:42:39.09910805+09:00","level":"INFO","msg":"handler: closed","stream_id":"hhvwfyma"}
+{"time":"2025-06-24T13:42:39.0991553+09:00","level":"INFO","msg":"writer: Close: closed","stream_id":"hhvwfyma"}
+{"time":"2025-06-24T13:42:39.099174726+09:00","level":"INFO","msg":"sender: closed","stream_id":"hhvwfyma"}
+{"time":"2025-06-24T13:42:39.099253337+09:00","level":"INFO","msg":"stream: closed","id":"hhvwfyma"}

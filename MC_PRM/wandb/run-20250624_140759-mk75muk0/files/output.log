@@ -1,0 +1,7 @@
+[Epoch 1/4] train=0.6696  val=0.7094
+[CKPT] Saved ⇒ checkpoints/gsm8k/test2/best_prm.pt
+[Epoch 2/4] train=0.6597  val=0.7112
+[Epoch 3/4] train=0.6606  val=0.7132
+[Epoch 4/4] train=0.6547  val=0.7105
+[CKPT] Saved ⇒ checkpoints/gsm8k/test2/last_prm.pt
+Training complete. Loss history: {'train': [0.6695703446865082, 0.6597320020198822, 0.6606122434139252, 0.6546710968017578], 'val': [0.709407389163971, 0.7111575305461884, 0.7131710946559906, 0.710472583770752]}
