@@ -1,9 +1,9 @@
 class PRMConfig:
     """Configuration class for PRM hyperparameters and settings"""
     # MC config
-    max_new_tokens:         int = 384
+    model_name:             str = "Qwen/Qwen2.5-Math-7B"    # "Qwen/Qwen2.5-Math-7B", "Qwen/Qwen2.5-Math-7B-Instruct" , "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B", "meta-llama/Llama-3.1-8B"
+    max_new_tokens:         int = 512
     num_rollouts:           int = 8      
-    reward_threshold:       float = 0.5
     samples_per_question:   int = 1
     use_llm:                bool = True  # Use llm for masking
     use_contri:             bool = True  # If true, use "contributions" as step rewards else use ori_rewards
