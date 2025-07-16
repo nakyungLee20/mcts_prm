@@ -10,7 +10,7 @@ from vllm import LLM, SamplingParams
 from config import PRMConfig
 from utils import _sanitize_enhanced, _numeric_equiv_enhanced, _extract_boxed_answer, system_prompt
 
-class MCRewardShapedVLLM:
+class ContriRewardvLLM:
     ANSWER_PATTERN = re.compile(
         r"""^[\s>#*\-]*          # optional markdown/bullet symbols
             Answer               # word 'Answer'
@@ -30,7 +30,7 @@ class MCRewardShapedVLLM:
         re.VERBOSE,
     )
     
-    def __init__(self, config: "PRMConfig", model_name: str = "Qwen/QwQ-32B"):
+    def __init__(self, config: "PRMConfig", model_name: str = "mistralai/Mathstral-7B-v0.1"):
         self.config = config
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         self.llm = LLM(
@@ -38,7 +38,7 @@ class MCRewardShapedVLLM:
             trust_remote_code=True,
             dtype="bfloat16",
             gpu_memory_utilization=0.9,
-            max_model_len=4096,
+            max_model_len=3072,
             quantization="bitsandbytes",
         )
         self.tokenizer = self.llm.get_tokenizer()
@@ -49,7 +49,6 @@ class MCRewardShapedVLLM:
             max_tokens=self.config.max_new_tokens,
             n=self.config.num_rollouts,
             repetition_penalty=1.1,
-            # stop=["Answer:", "####"],
         )
         self.masking_params = SamplingParams(
             temperature=0.5,
@@ -101,8 +100,8 @@ class MCRewardShapedVLLM:
     def model_masking_batch(self, texts: List[str]) -> List[str]:
         mask_prompts = [
             (
-                "In the sentence below, mask any word or expression that seems crucial "
-                "for solving the math step by replacing it with '[MASKED]'.\n"
+                "In the sentence below, mask any word or expression that seems crucial (such as a variable or a number or a operator etc.) "
+                "for solving the math problem by replacing it with '[MASKED]'.\n"
                 f"Sentence: \"{t}\"\nRewritten:"
             )
             for t in texts
@@ -112,7 +111,6 @@ class MCRewardShapedVLLM:
 
     def perturb_step_rewards_batch(self, question: str, sys_prompt: str, steps: List[str], gold_answer: str, use_llm: bool = True) -> List[float]:
         base_prompt = f"{sys_prompt}\n\nProblem: {question}\n"
-        
         bodies = []
         prefixes = []
         for step in steps:
@@ -135,119 +133,11 @@ class MCRewardShapedVLLM:
         outputs = self._batched_generate(prompts, self.rollout_params)
         return self._score_batch(outputs, gold_answer)
 
-    # def entropy_bits_exact(self, prompt: str, target: str) -> float:
-    #     LOG2E = 1 / math.log(2)
-    #     full = prompt + target
-    #     inputs = self.tokenizer(full, return_tensors="pt").to(self.device)
-    #     Lp = len(self.tokenizer(prompt)["input_ids"])
-    #     # Access underlying PyTorch model ------------------------------------------------
-    #     model = self.llm.llm_engine.engine_core.engine_core.model_executor.model_runner.model
-    #     with torch.no_grad():
-    #         logits = model(**inputs).logits.float()
-    #     probs = logits.softmax(-1)
-    #     H = -(probs * probs.log()).sum(-1) * LOG2E  # nat → bit
-    #     mask = torch.zeros_like(inputs["input_ids"], dtype=torch.bool)
-    #     mask[:, Lp:] = True
-    #     return (H[mask].sum() / mask.sum()).item()
-    
-    def entropy_bits_exact(self, prompt: str, target: str) -> float:
-        """VLLM을 사용한 entropy 계산 - cross-entropy 기반"""
-        try:
-            LOG2E = 1 / math.log(2)
-            full = prompt + target
-            
-            # VLLM의 logprobs 기능 사용 (더 안정적인 방법)
-            logprob_params = SamplingParams(
-                temperature=0.0,  # deterministic
-                max_tokens=0,     # no generation, just logprobs
-                logprobs=1,       # get logprobs for the full sequence
-            )
-            
-            outputs = self.llm.generate([full], logprob_params)
-            output = outputs[0]
-            
-            if hasattr(output, 'prompt_logprobs') and output.prompt_logprobs:
-                # prompt 부분의 길이 계산
-                prompt_tokens = len(self.tokenizer(prompt)["input_ids"])
-                # target 부분의 logprobs 추출
-                target_logprobs = output.prompt_logprobs[prompt_tokens:]
-                if target_logprobs:
-                    # 각 토큰의 surprisal 계산 (bits)
-                    surprisals = [-lp * LOG2E for lp in target_logprobs]
-                    # 평균 surprisal을 entropy 근사값으로 사용
-                    return sum(surprisals) / len(surprisals)
-                else:
-                    return 0.0
-            else:
-                # logprobs가 없는 경우 간단한 근사 사용
-                return self.entropy_bits_simple(prompt, target)
-        except Exception as e:
-            print(f"Logprobs entropy calculation failed: {e}")
-            return self.entropy_bits_simple(prompt, target)
-    
-    def entropy_bits_simple(self, prompt: str, target: str) -> float:
-        """간단한 entropy 근사 - 토큰 수 기반"""
-        try:
-            target_tokens = len(self.tokenizer(target)["input_ids"])
-            # 각 토큰당 평균 2-3 bits 정도의 entropy를 가진다고 가정
-            if target_tokens <= 1:
-                return 2.0  # 단일 토큰
-            elif target_tokens <= 3:
-                return 2.5  # 짧은 답변
-            else:
-                return 3.0  # 긴 답변
-                
-        except Exception as e:
-            print(f"Simple entropy calculation failed: {e}")
-            return 2.5  # 기본값
-    
-    def entropy_bits_mc(self, prompt: str, target: str, k: int = 10) -> float:
-        """Monte Carlo 샘플링을 통한 entropy 근사"""
-        try:
-            mc_params = SamplingParams(
-                temperature=0.8,
-                top_p=0.9,
-                max_tokens=len(self.tokenizer(target)["input_ids"]) + 5,
-                n=k,
-            )
-            outputs = self.llm.generate([prompt], mc_params)
-            # 생성된 샘플들의 다양성을 측정
-            generated_texts = [output.outputs[0].text for output in outputs]
-            unique_texts = set(generated_texts)
-            # 다양성 기반 entropy 근사
-            diversity_ratio = len(unique_texts) / len(generated_texts)
-            # 다양성이 높을수록 entropy가 높음
-            if diversity_ratio > 0.8:
-                return 4.0  # 높은 entropy
-            elif diversity_ratio > 0.5:
-                return 3.0  # 중간 entropy
-            else:
-                return 2.0  # 낮은 entropy     
-        except Exception as e:
-            print(f"MC entropy calculation failed: {e}")
-            return self.entropy_bits_simple(prompt, target)
-    
-    def compute_step_mi(self, question: str, steps: List[str], gold_answer: str) -> List[float]:
-        sys_prompt = (
-            "Solve the problem step by step in the format 'Step k: ...' and final 'Answer:'.\nProblem: "
-        )
-        gold_answer = "Answer: " + gold_answer
-        context = sys_prompt + re.sub(r" +", " ", question) + "\n\n"
-
-        mi_vals = []
-        cumulative_prompt = context
-        for step in steps:
-            h_before = self.entropy_bits_exact(cumulative_prompt, gold_answer)
-            cumulative_prompt += step + "\n"
-            h_after = self.entropy_bits_exact(cumulative_prompt, gold_answer)
-            mi_vals.append(h_before - h_after)
-        return mi_vals
-
     def gsm8k_reward_dataset_vllm(self, *, split: str = "train", start: int = 0, take: int | None):
         ds = load_dataset("openai/gsm8k", "main", split=split)
         ds = ds.select(range(start, start + take)) if take else ds
 
-        for sample in tqdm(ds, desc="Building GSM8K reward-dataset"):
+        for sample in tqdm(ds, desc="Building GSM8K contri reward-dataset"):
             q_txt, g_sol = sample["question"], sample["answer"]
             lines, gold_ans = [], None
             
@@ -267,15 +157,7 @@ class MCRewardShapedVLLM:
 
             ori = self.compute_step_rewards_batch(q_txt, system_prompt("rollout"), steps, gold_ans)
             ptb = self.perturb_step_rewards_batch(q_txt, system_prompt("rollout"), steps, gold_ans, self.config.use_llm)
-            # mi = self.compute_step_mi(q_txt, steps, gold_ans)
-
-            # naive = [round(o + max(m, 0), 4) for o, m in zip(ori, mi)]
             contrib = [round(o - p, 4) for o, p in zip(ori, ptb)]
-            print("ori: ", ori)
-            print("ptb: ", ptb)
-            # print("mi: ", mi)
-            # print("naive: ", naive)
-            print("contrib: ", contrib)
 
             entry = {
                 "question": q_txt,
@@ -283,8 +165,6 @@ class MCRewardShapedVLLM:
                 "ori_rewards": ori,
                 "ptb_rewards": ptb,
                 "contributions": contrib,
-                # "mi_rewards": mi,
-                # "naive_rewards": naive,
                 "gold_answer": gold_ans,
             }
             yield entry
@@ -294,9 +174,8 @@ class MCRewardShapedVLLM:
         ds = load_dataset("HuggingFaceTB/MATH", "all", split=split)
         ds = ds.select(range(start, start + take)) if take else ds
 
-        for sample in tqdm(ds, desc="Building MATH reward-dataset"):
+        for sample in tqdm(ds, desc="Building MATH contri reward-dataset"):
             full_sol = sample["solution"]
-
             boxed_content = _extract_boxed_answer(full_sol)
             gold_ans = _sanitize_enhanced(boxed_content) if boxed_content else None
             if gold_ans is None:
@@ -312,15 +191,7 @@ class MCRewardShapedVLLM:
 
             ori = self.compute_step_rewards_batch(sample["problem"], system_prompt("rollout"), steps, gold_ans)
             ptb = self.perturb_step_rewards_batch(sample["problem"], system_prompt("rollout"), steps, gold_ans, self.config.use_llm)
-            # mi = self.compute_step_mi(sample["problem"], steps, gold_ans)
-
             contrib = [round(o - p, 4) for o, p in zip(ori, ptb)]
-            # naive = [round(o + max(m, 0), 4) for o, m in zip(ori, mi)]
-            print("ori: ", ori)
-            print("ptb: ", ptb)
-            # print("mi: ", mi)
-            # print("naive: ", naive)
-            print("contrib: ", contrib)
 
             entry = {
                 "question": sample["problem"],
@@ -328,8 +199,6 @@ class MCRewardShapedVLLM:
                 "ori_rewards": ori,
                 "ptb_rewards": ptb,
                 "contributions": contrib,
-                # "mi_rewards": mi,
-                # "naive_rewards": naive,
                 "gold_answer": gold_ans,
             }
             yield entry

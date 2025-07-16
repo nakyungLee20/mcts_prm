@@ -6,40 +6,38 @@ from torch.utils.data import Dataset
 from transformers import PreTrainedTokenizer
 
 class StepwisePRMDataset(Dataset):
-    """
-    build_datasets() 가 반환한 entries(list[dict])를
-    (input_ids, scalar_reward) 샘플들로 변환한다.
-
-    한 entry = {question, completion[steps], rewards[float], …}
-    →  (Problem + Step1,   r1)
-        (Problem + Step1 \nStep2,   r2) …
-    """
+    """mcr rewards가 반환한 entries(list[dict])를 (input_ids, scalar_reward) 샘플들로 변환한다.
+    한 entry = {question, completion[steps], rewards[float], …} →  (Problem + Step1, r1), (Problem + Step1 \nStep2, r2) …"""
     def __init__(
         self,
         entries: List[dict],
         tokenizer: PreTrainedTokenizer,
         max_length: int = 512,
-        use_contr: bool = True,
+        reward_type: str = "naive",
         *,
         cache_encodings: bool = True,
         preprocess: bool = True,
     ):
         self.tokenizer   = tokenizer
         self.max_length  = max_length
-        self.use_contri    = use_contr
+        self.reward_type = reward_type
         self.cache       = {} if cache_encodings else None
         self.samples: List[Tuple[str, float]] = []
 
         for e in entries:
             q_txt   = e["question"]
             steps   = e["completion"]
+            ans = e["gold_answer"]
             o_rewards = e["ori_rewards"]
-            contri = e["contributions"]
             assert len(steps) == len(o_rewards)
 
-            if self.use_contri:
-                rewards = contri
+            if self.reward_type == "contri":
+                rewards = e["contributions"]
                 # rewards = [max(0.0, x) for x in contri]
+            elif self.reward_type == "mi":
+                rewards = e["mi_filtered"]
+            elif self.reward_type == "cmi":
+                rewards = e["contributions"] + e["mi_filtered"]
             else:
                 rewards = o_rewards
 
