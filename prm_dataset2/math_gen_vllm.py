@@ -12,9 +12,6 @@ os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
 os.environ["CUDA_VISIBLE_DEVICES"] = "3"
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-# os.environ["VLLM_USE_V1"] = "1"
-# os.environ["VLLM_ENABLE_V1_MULTIPROCESSING"] = "0"  # 핵심!
-
 def read_jsonl(file_path):
     """JSONL 파일을 읽어서 리스트로 반환"""
     data = []
@@ -36,14 +33,14 @@ def main():
     model_name = "Qwen/QwQ-32B"  # 또는 더 작은 모델 사용 가능
     mcrs = MCRewardShapedVLLM(config=cfg, model_name=model_name)
 
-    output_file = "/home/leena/ccc_eval/mcts_prm/samples/gsm8k_1000_vllm2.jsonl"
+    output_file = "/home/leena/ccc_eval/mcts_prm/samples/math_1000_vllm2.jsonl"
     with open(output_file, "w", encoding="utf-8") as f:
-        for i, entry in enumerate(mcrs.gsm8k_reward_dataset_vllm(split="train", start=2000, take=1000)):
+        for i, entry in enumerate(mcrs.math_reward_dataset_vllm(split="train", start=1000, take=1000)):
             f.write(json.dumps(entry, ensure_ascii=False) + "\n")
             f.flush() 
 
     print(f"Data saved to {output_file}")
-    jsonl_to_json(output_file, "/home/leena/ccc_eval/mcts_prm/samples/gsm8k_1000_vllm2_converted.json")
+    jsonl_to_json(output_file, "/home/leena/ccc_eval/mcts_prm/samples/math_1000_vllm2_converted.json")
 
 if __name__ == "__main__":
     main() 

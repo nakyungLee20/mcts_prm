@@ -6,17 +6,13 @@ import torch
 
 # Project-level helpers
 from config import PRMConfig
-from mc_shaped_reward_vllm2 import MCRewardShapedVLLM
+from contri_reward import ContriRewardvLLM
 
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
-os.environ["CUDA_VISIBLE_DEVICES"] = "3"
+os.environ["CUDA_VISIBLE_DEVICES"] = "2"
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-# os.environ["VLLM_USE_V1"] = "1"
-# os.environ["VLLM_ENABLE_V1_MULTIPROCESSING"] = "0"  # 핵심!
-
 def read_jsonl(file_path):
-    """JSONL 파일을 읽어서 리스트로 반환"""
     data = []
     with open(file_path, 'r', encoding='utf-8') as f:
         for line in f:
@@ -25,7 +21,6 @@ def read_jsonl(file_path):
     return data
 
 def jsonl_to_json(jsonl_path, json_path):
-    """JSONL 파일을 일반 JSON 파일로 변환"""
     data = read_jsonl(jsonl_path)
     with open(json_path, 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
@@ -33,17 +28,17 @@ def jsonl_to_json(jsonl_path, json_path):
 
 def main():
     cfg = PRMConfig()
-    model_name = "Qwen/QwQ-32B"  # 또는 더 작은 모델 사용 가능
-    mcrs = MCRewardShapedVLLM(config=cfg, model_name=model_name)
+    model_name = "mistralai/Mathstral-7B-v0.1"  
+    contri = ContriRewardvLLM(config=cfg, model_name=model_name)
 
-    output_file = "/home/leena/ccc_eval/mcts_prm/samples/gsm8k_1000_vllm2.jsonl"
+    output_file = "/home/leena/ccc_eval/mcts_prm/cmi_samples/math_contri_mistral_6000_7000.jsonl"
     with open(output_file, "w", encoding="utf-8") as f:
-        for i, entry in enumerate(mcrs.gsm8k_reward_dataset_vllm(split="train", start=2000, take=1000)):
+        for i, entry in enumerate(contri.math_reward_dataset_vllm(split="train", start=6000, take=1000)):
             f.write(json.dumps(entry, ensure_ascii=False) + "\n")
             f.flush() 
 
     print(f"Data saved to {output_file}")
-    jsonl_to_json(output_file, "/home/leena/ccc_eval/mcts_prm/samples/gsm8k_1000_vllm2_converted.json")
+    jsonl_to_json(output_file, "/home/leena/ccc_eval/mcts_prm/cmi_samples/math_contri_mistral_6000_7000.json")
 
 if __name__ == "__main__":
     main() 

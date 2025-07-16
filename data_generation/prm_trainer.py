@@ -9,22 +9,12 @@ from torch.utils.data import DataLoader
 import logging
 import math
 from torch.optim.lr_scheduler import LambdaLR
+from tqdm import tqdm
 
 # Project‑level helpers 
 from prm_dataset import StepwisePRMDataset  # noqa: F401 – custom Dataset wrapper
 from prm_model import ProcessRewardModel    # noqa: F401 – small MLP «PRM» head
 from config import PRMConfig
-
-# Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    handlers=[
-        logging.FileHandler('omega_prm.log'),
-        logging.StreamHandler()
-    ]
-)
-logger = logging.getLogger(__name__)
 
 class PRMTrainer:
     """
@@ -62,6 +52,17 @@ class PRMTrainer:
                 progress = (step - cfg.warmup_steps) / max(1, self.total_steps - cfg.warmup_steps)
                 return 0.5 * (1.0 + math.cos(math.pi * progress))
             self.scheduler = LambdaLR(self.opt, lr_lambda)
+        elif cfg.lr_scheduler == "linear":
+            # Linear warmup + decay
+            self.total_steps = math.ceil(cfg.epochs * cfg.dataset_size / cfg.batch_size)
+            def lr_lambda(step):
+                if step < cfg.warmup_steps:
+                    return step / max(1, cfg.warmup_steps)
+                return max(0.0, (self.total_steps - step) / (self.total_steps - cfg.warmup_steps))
+            self.scheduler = LambdaLR(self.opt, lr_lambda)
+        elif cfg.lr_scheduler == "step":
+            # Step decay
+            self.scheduler = optim.lr_scheduler.StepLR(self.opt, step_size=5, gamma=0.5)
 
         self.ckpt_dir = Path(cfg.checkpoint_dir)
         self.ckpt_dir.mkdir(exist_ok=True, parents=True)
@@ -77,17 +78,17 @@ class PRMTrainer:
     # ----------------------------------------------------------------- features
     @torch.no_grad()
     def _encode(self, ids: torch.Tensor) -> torch.Tensor:
-        """
-        input_ids [B,T] → [B, feat_dim] using 마지막 hidden state의 CLS-like 첫 토큰
-        """
+        """input_ids [B,T] → [B, feat_dim] using 마지막 hidden state의 CLS-like 첫 토큰"""
         out = self.model(input_ids=ids, return_dict=True,output_hidden_states=True)
-        return out.hidden_states[-1][:, 0, :]     # CLS embedding
+        features = out.hidden_states[-1][:, 0, :]     # CLS embedding
+        return features.float()
 
     # ----------------------------------------------------------------- loop util
     def _run_epoch(self, loader: DataLoader, train: bool, epoch_idx: int) -> float:
         self.prm.train(train)
         total = 0.0
-
+        num_batches = len(loader)
+        
         for step, (ids, reward) in enumerate(loader):
             ids, reward = ids.to(self.device), reward.to(self.device)
 
@@ -95,12 +96,20 @@ class PRMTrainer:
                 feats  = self._encode(ids)
                 pred   = self.prm(feats).squeeze(-1)
                 loss   = self.crit(pred, reward)
+                
                 if train:
                     self.opt.zero_grad()
                     loss.backward()
+                    # Gradient clipping
                     torch.nn.utils.clip_grad_norm_(self.prm.parameters(), self.cfg.grad_clip)
-                    self.opt.step()
-                    if self.scheduler: self.scheduler.step()
+                    # Gradient accumulation (optional)
+                    if hasattr(self.cfg, 'grad_accum_steps') and self.cfg.grad_accum_steps > 1:
+                        if (step + 1) % self.cfg.grad_accum_steps == 0:
+                            self.opt.step()
+                            if self.scheduler: self.scheduler.step()
+                    else:
+                        self.opt.step()
+                        if self.scheduler: self.scheduler.step()
 
             total += loss.item()
 
@@ -108,11 +117,13 @@ class PRMTrainer:
             if self.wandb_run and train:
                 wandb.log({
                     "batch_loss": loss.item(),
-                    "epoch": epoch_idx + step / len(loader),
+                    "epoch": epoch_idx + step / num_batches,
                     "lr": self.opt.param_groups[0]["lr"],
-                    "grad_norm": sum(p.grad.data.norm(2).item()
-                                     for p in self.prm.parameters()
-                                     if p.grad is not None),
+                    "grad_norm": sum(p.grad.data.norm(2).item() for p in self.prm.parameters() if p.grad is not None),
+                    "pred_mean": pred.mean().item(),
+                    "pred_std": pred.std().item(),
+                    "reward_mean": reward.mean().item(),
+                    "reward_std": reward.std().item(),
                 })
 
         return total / len(loader)
@@ -122,7 +133,7 @@ class PRMTrainer:
         self.cfg.dataset_size = len(train_loader) 
 
         history = {"train": [], "val": []}
-        best_val, bad_epoch, patience = float("inf"), 0, 6
+        best_val, bad_epochs, patience = float("inf"), 0, 8  # patience 증가
 
         for ep in range(self.cfg.epochs):
             tr_loss = self._run_epoch(train_loader, train=True,  epoch_idx=ep)
@@ -134,17 +145,24 @@ class PRMTrainer:
 
             # -------- epoch logging --------
             if self.wandb_run:
-                wandb.log({"train_loss": tr_loss,"val_loss": vl_loss,"epoch": ep})
+                wandb.log({
+                    "train_loss": tr_loss,
+                    "val_loss": vl_loss,
+                    "epoch": ep,
+                    "lr": self.opt.param_groups[0]["lr"],
+                })
 
             # 체크포인트 저장
             if vl_loss < best_val:
                 best_val = vl_loss
                 bad_epochs = 0
                 self._save_checkpoint("best_prm.pt", epoch=ep, val_loss=vl_loss)
+                print(f"[Best] New best validation loss: {vl_loss:.4f}")
             else:
                 bad_epochs += 1
+                print(f"[Early-Stopping] No improvement for {bad_epochs}/{patience} epochs")
                 if bad_epochs >= patience:
-                    print(f"[Early-Stopping] no improvement for {patience} epochs")
+                    print(f"[Early-Stopping] Stopping training after {patience} epochs without improvement")
                     break
         
         self._save_checkpoint("last_prm.pt", epoch=self.cfg.epochs - 1, val_loss=vl_loss)
