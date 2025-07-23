@@ -38,7 +38,7 @@ class ContriRewardvLLM:
             trust_remote_code=True,
             dtype="bfloat16",
             gpu_memory_utilization=0.9,
-            max_model_len=3072,
+            max_model_len=4096,
             quantization="bitsandbytes",
         )
         self.tokenizer = self.llm.get_tokenizer()
@@ -135,7 +135,9 @@ class ContriRewardvLLM:
 
     def gsm8k_reward_dataset_vllm(self, *, split: str = "train", start: int = 0, take: int | None):
         ds = load_dataset("openai/gsm8k", "main", split=split)
-        ds = ds.select(range(start, start + take)) if take else ds
+        # ds = ds.select(range(start, start + take)) if take else ds
+        ds = ds.select(range(start, len(ds)))
+        print("Generated dataset size: ", len(ds))
 
         for sample in tqdm(ds, desc="Building GSM8K contri reward-dataset"):
             q_txt, g_sol = sample["question"], sample["answer"]
@@ -172,8 +174,10 @@ class ContriRewardvLLM:
     def math_reward_dataset_vllm(self, *, split: str = "train", start: int = 0, take: int | None):
         sent_split = re.compile(r'\.(?!\d)(?=\s|$)')
         ds = load_dataset("HuggingFaceTB/MATH", "all", split=split)
-        ds = ds.select(range(start, start + take)) if take else ds
-
+        # ds = ds.select(range(start, start + take)) if take else ds
+        ds = ds.select(range(start, len(ds)))
+        print("Generated dataset size: ", len(ds))
+        
         for sample in tqdm(ds, desc="Building MATH contri reward-dataset"):
             full_sol = sample["solution"]
             boxed_content = _extract_boxed_answer(full_sol)

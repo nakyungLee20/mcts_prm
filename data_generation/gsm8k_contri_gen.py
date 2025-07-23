@@ -31,14 +31,14 @@ def main():
     model_name = "mistralai/Mathstral-7B-v0.1"  
     contri = ContriRewardvLLM(config=cfg, model_name=model_name)
 
-    output_file = "/home/leena/ccc_eval/mcts_prm/cmi_samples/gsm8k_contri_mistral_6000_7000.jsonl"
+    output_file = "/home/leena/ccc_eval/mcts_prm/cmi_samples/gsm8k_contri_mistral_7000_fin.jsonl"
     with open(output_file, "w", encoding="utf-8") as f:
-        for i, entry in enumerate(contri.gsm8k_reward_dataset_vllm(split="train", start=6000, take=1000)):
+        for i, entry in enumerate(contri.gsm8k_reward_dataset_vllm(split="train", start=7000, take=0)):
             f.write(json.dumps(entry, ensure_ascii=False) + "\n")
             f.flush() 
 
     print(f"Data saved to {output_file}")
-    jsonl_to_json(output_file, "/home/leena/ccc_eval/mcts_prm/cmi_samples/gsm8k_contri_mistral_6000_7000.json")
+    jsonl_to_json(output_file, "/home/leena/ccc_eval/mcts_prm/cmi_samples/gsm8k_contri_mistral_7000_fin.json")
 
 if __name__ == "__main__":
     main() 

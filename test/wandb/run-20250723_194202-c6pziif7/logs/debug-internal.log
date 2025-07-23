@@ -1,0 +1,17 @@
+{"time":"2025-07-23T19:42:03.205603279+09:00","level":"INFO","msg":"stream: starting","core version":"0.20.1","symlink path":"/home/leena/ccc_eval/mcts_prm/test/wandb/run-20250723_194202-c6pziif7/logs/debug-core.log"}
+{"time":"2025-07-23T19:42:04.487439142+09:00","level":"INFO","msg":"stream: created new stream","id":"c6pziif7"}
+{"time":"2025-07-23T19:42:04.487500987+09:00","level":"INFO","msg":"stream: started","id":"c6pziif7"}
+{"time":"2025-07-23T19:42:04.48753899+09:00","level":"INFO","msg":"handler: started","stream_id":"c6pziif7"}
+{"time":"2025-07-23T19:42:04.487530692+09:00","level":"INFO","msg":"writer: Do: started","stream_id":"c6pziif7"}
+{"time":"2025-07-23T19:42:04.487571252+09:00","level":"INFO","msg":"sender: started","stream_id":"c6pziif7"}
+{"time":"2025-07-23T19:42:04.875798215+09:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-07-23T19:43:05.665641259+09:00","level":"ERROR","msg":"HTTP error","status":404,"method":"POST","url":"https://api.wandb.ai/files/leena12/huggingface/c6pziif7/file_stream"}
+{"time":"2025-07-23T19:43:05.665741445+09:00","level":"ERROR+4","msg":"filestream: fatal error: filestream: failed to upload: 404 Not Found path=files/leena12/huggingface/c6pziif7/file_stream: {\"error\":\"project leena12/huggingface not found while streaming file\"}"}
+{"time":"2025-07-23T19:44:34.039136428+09:00","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-07-23T19:44:35.681427925+09:00","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-07-23T19:45:44.382838081+09:00","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-07-23T19:45:44.472248726+09:00","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-07-23T19:46:00.923169839+09:00","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-07-23T19:46:02.621739444+09:00","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-07-23T20:05:02.705956852+09:00","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-07-23T20:05:02.746143247+09:00","level":"INFO","msg":"Resuming system monitor"}

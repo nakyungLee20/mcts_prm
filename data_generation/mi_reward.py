@@ -77,8 +77,10 @@ class MIReward:
     # Streaming versions for memory-efficient processing
     def gsm8k_reward_dataset_streaming(self, *, split: str = "train", start: int = 0, take: int | None):
         ds = load_dataset("openai/gsm8k", "main", split=split)
-        ds = ds.select(range(start, start + take)) if take else ds
-
+        # ds = ds.select(range(start, start + take)) if take else ds
+        fin = len(ds)
+        ds = ds.select(range(start, fin))
+        
         for sample in tqdm(ds, desc="Building GSM8K MI reward-dataset"):
             q_txt   = sample["question"]
             g_sol   = sample["answer"]
@@ -111,7 +113,9 @@ class MIReward:
     def math_reward_dataset_streaming(self, *, split: str = "train", start: int = 0, take: int | None):
         sent_split = re.compile(r'\.(?!\d)(?=\s|$)')   # 소수점·수식 내부 마침표 무시
         ds = load_dataset("HuggingFaceTB/MATH", "all", split=split)
-        ds = ds.select(range(start, start + take)) if take else ds
+        # ds = ds.select(range(start, start + take)) if take else ds
+        fin = len(ds)
+        ds = ds.select(range(start, fin))
 
         for sample in tqdm(ds, desc="Building MATH MI reward-dataset"):
             full_sol   = sample["solution"]

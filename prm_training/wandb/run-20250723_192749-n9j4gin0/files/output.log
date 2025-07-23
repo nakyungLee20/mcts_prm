@@ -1,0 +1,7 @@
+[Epoch 1/20] train=0.2613  val=0.2544
+[CKPT] Saved ⇒ checkpoints/cmi/test_0723/best_prm.pt
+[Best] New best validation loss: 0.2544
+[Epoch 2/20] train=0.2585  val=0.2545
+[Early-Stopping] No improvement for 1/8 epochs
+[Epoch 3/20] train=0.2578  val=0.2580
+[Early-Stopping] No improvement for 2/8 epochs

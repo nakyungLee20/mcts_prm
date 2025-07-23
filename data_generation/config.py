@@ -6,7 +6,7 @@ class PRMConfig:
     num_rollouts:           int = 8      
     samples_per_question:   int = 1
     use_llm:                bool = True  # Use llm for masking
-    reward_type:            str = "contri"  # ori, contri, mi, naive, norm
+    reward_type:            str = "cmi"  # ori, contri, mi, cmi
     # PRM Model config 
     hidden_size:        int = 512      # 256-1024 범위에서 적절
     num_layers:         int = 3        # 2-4 범위에서 적절
