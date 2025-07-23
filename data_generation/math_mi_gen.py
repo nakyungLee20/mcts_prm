@@ -10,7 +10,7 @@ from config import PRMConfig
 from mi_reward import MIReward
 
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
-os.environ["CUDA_VISIBLE_DEVICES"] = "1"
+os.environ["CUDA_VISIBLE_DEVICES"] = "2"
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 def read_jsonl(file_path):
@@ -47,14 +47,14 @@ def main():
     mi = MIReward(config=cfg, model=model, tokenizer=tokenizer)
     print("Finish loading model and tokenizer")
 
-    output_file = "/home/leena/ccc_eval/mcts_prm/cmi_samples/math_mi_mistral_6000_7000.jsonl"
+    output_file = "/home/leena/ccc_eval/mcts_prm/cmi_samples/math_mi_mistral_6000_fin.jsonl"
     with open(output_file, "w", encoding="utf-8") as f:
-        for i, entry in enumerate(mi.math_reward_dataset_streaming(split="train", start=6000, take=1000)):
+        for i, entry in enumerate(mi.math_reward_dataset_streaming(split="train", start=6000, take=0)):
             f.write(json.dumps(entry, ensure_ascii=False) + "\n")
             f.flush() 
 
     print(f"Data saved to {output_file}")
-    jsonl_to_json(output_file, "/home/leena/ccc_eval/mcts_prm/cmi_samples/math_mi_mistral_6000_7000.json")
+    jsonl_to_json(output_file, "/home/leena/ccc_eval/mcts_prm/cmi_samples/math_mi_mistral_6000_fin.json")
 
 if __name__ == "__main__":
     main() 

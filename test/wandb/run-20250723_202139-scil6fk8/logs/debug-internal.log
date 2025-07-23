@@ -1,0 +1,7 @@
+{"time":"2025-07-23T20:21:40.04882197+09:00","level":"INFO","msg":"stream: starting","core version":"0.20.1","symlink path":"/home/leena/ccc_eval/mcts_prm/test/wandb/run-20250723_202139-scil6fk8/logs/debug-core.log"}
+{"time":"2025-07-23T20:21:40.411929632+09:00","level":"INFO","msg":"stream: created new stream","id":"scil6fk8"}
+{"time":"2025-07-23T20:21:40.412013193+09:00","level":"INFO","msg":"stream: started","id":"scil6fk8"}
+{"time":"2025-07-23T20:21:40.412030824+09:00","level":"INFO","msg":"sender: started","stream_id":"scil6fk8"}
+{"time":"2025-07-23T20:21:40.412032058+09:00","level":"INFO","msg":"writer: Do: started","stream_id":"scil6fk8"}
+{"time":"2025-07-23T20:21:40.412048551+09:00","level":"INFO","msg":"handler: started","stream_id":"scil6fk8"}
+{"time":"2025-07-23T20:21:40.704296539+09:00","level":"INFO","msg":"Starting system monitor"}

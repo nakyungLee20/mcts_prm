@@ -1,0 +1,7 @@
+{"time":"2025-07-23T21:18:43.154771592+09:00","level":"INFO","msg":"stream: starting","core version":"0.20.1","symlink path":"/home/leena/ccc_eval/mcts_prm/prm_training/wandb/run-20250723_211842-n5fufvkr/logs/debug-core.log"}
+{"time":"2025-07-23T21:18:44.287372909+09:00","level":"INFO","msg":"stream: created new stream","id":"n5fufvkr"}
+{"time":"2025-07-23T21:18:44.287441078+09:00","level":"INFO","msg":"stream: started","id":"n5fufvkr"}
+{"time":"2025-07-23T21:18:44.287467626+09:00","level":"INFO","msg":"writer: Do: started","stream_id":"n5fufvkr"}
+{"time":"2025-07-23T21:18:44.287476757+09:00","level":"INFO","msg":"handler: started","stream_id":"n5fufvkr"}
+{"time":"2025-07-23T21:18:44.287494476+09:00","level":"INFO","msg":"sender: started","stream_id":"n5fufvkr"}
+{"time":"2025-07-23T21:18:44.560379512+09:00","level":"INFO","msg":"Starting system monitor"}

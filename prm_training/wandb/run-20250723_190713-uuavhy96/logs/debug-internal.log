@@ -1,0 +1,15 @@
+{"time":"2025-07-23T19:07:13.312350319+09:00","level":"INFO","msg":"stream: starting","core version":"0.20.1","symlink path":"/home/leena/ccc_eval/mcts_prm/prm_training/wandb/run-20250723_190713-uuavhy96/logs/debug-core.log"}
+{"time":"2025-07-23T19:07:14.645060714+09:00","level":"INFO","msg":"stream: created new stream","id":"uuavhy96"}
+{"time":"2025-07-23T19:07:14.645093501+09:00","level":"INFO","msg":"stream: started","id":"uuavhy96"}
+{"time":"2025-07-23T19:07:14.645120287+09:00","level":"INFO","msg":"sender: started","stream_id":"uuavhy96"}
+{"time":"2025-07-23T19:07:14.6451221+09:00","level":"INFO","msg":"writer: Do: started","stream_id":"uuavhy96"}
+{"time":"2025-07-23T19:07:14.645153664+09:00","level":"INFO","msg":"handler: started","stream_id":"uuavhy96"}
+{"time":"2025-07-23T19:07:15.052701927+09:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-07-23T19:20:15.499139055+09:00","level":"INFO","msg":"stream: closing","id":"uuavhy96"}
+{"time":"2025-07-23T19:20:15.499193855+09:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-07-23T19:20:15.886629286+09:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-07-23T19:20:16.50259372+09:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-07-23T19:20:16.791008768+09:00","level":"INFO","msg":"handler: closed","stream_id":"uuavhy96"}
+{"time":"2025-07-23T19:20:16.791045368+09:00","level":"INFO","msg":"sender: closed","stream_id":"uuavhy96"}
+{"time":"2025-07-23T19:20:16.791037099+09:00","level":"INFO","msg":"writer: Close: closed","stream_id":"uuavhy96"}
+{"time":"2025-07-23T19:20:16.79119015+09:00","level":"INFO","msg":"stream: closed","id":"uuavhy96"}

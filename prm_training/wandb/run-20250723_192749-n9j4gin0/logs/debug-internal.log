@@ -1,0 +1,7 @@
+{"time":"2025-07-23T19:27:49.323829775+09:00","level":"INFO","msg":"stream: starting","core version":"0.20.1","symlink path":"/home/leena/ccc_eval/mcts_prm/prm_training/wandb/run-20250723_192749-n9j4gin0/logs/debug-core.log"}
+{"time":"2025-07-23T19:27:50.194470483+09:00","level":"INFO","msg":"stream: created new stream","id":"n9j4gin0"}
+{"time":"2025-07-23T19:27:50.194679834+09:00","level":"INFO","msg":"stream: started","id":"n9j4gin0"}
+{"time":"2025-07-23T19:27:50.194666663+09:00","level":"INFO","msg":"handler: started","stream_id":"n9j4gin0"}
+{"time":"2025-07-23T19:27:50.194683683+09:00","level":"INFO","msg":"writer: Do: started","stream_id":"n9j4gin0"}
+{"time":"2025-07-23T19:27:50.194695938+09:00","level":"INFO","msg":"sender: started","stream_id":"n9j4gin0"}
+{"time":"2025-07-23T19:27:50.556771559+09:00","level":"INFO","msg":"Starting system monitor"}

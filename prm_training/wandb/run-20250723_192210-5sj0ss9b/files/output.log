@@ -1,0 +1,3 @@
+[Epoch 1/20] train=0.0840  val=0.0852
+[CKPT] Saved ⇒ checkpoints/ori/test_0723/best_prm.pt
+[Best] New best validation loss: 0.0852
