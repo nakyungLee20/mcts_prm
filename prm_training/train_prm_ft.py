@@ -29,7 +29,7 @@ from prm_dataset import StepwisePRMDataset
 from config import PRMConfig    
 
 os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"  # Arrange GPU devices starting from 0
-os.environ["CUDA_VISIBLE_DEVICES"]= "3"
+os.environ["CUDA_VISIBLE_DEVICES"]= "1"
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 os.environ["WANDB_PROJECT"]="mc_prm"
@@ -193,7 +193,8 @@ def main():
     with open("/home/leena/ccc_eval/mcts_prm/cmi_samples/total_gsm8k_merge_mistral.json", "r") as file:
         gsm8k_raw = json.load(file)
 
-    full_ds = StepwisePRMDataset(gsm8k_raw, tokenizer, cfg.max_new_tokens, reward_type="cmi")
+    print(f"Loading Dataset with reward type: {cfg.reward_type}")
+    full_ds = StepwisePRMDataset(gsm8k_raw, tokenizer, cfg.max_new_tokens, reward_type=cfg.reward_type)
     indices = list(range(len(full_ds)))
     split_idx = int(0.9 * len(full_ds)) if len(full_ds) > 1 else 1
     train_indices = indices[:split_idx]

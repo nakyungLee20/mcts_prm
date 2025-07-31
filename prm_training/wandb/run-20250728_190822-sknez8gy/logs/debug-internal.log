@@ -1,0 +1,16 @@
+{"time":"2025-07-28T19:08:22.848515532+09:00","level":"INFO","msg":"stream: starting","core version":"0.20.1","symlink path":"/home/leena/ccc_eval/mcts_prm/prm_training/wandb/run-20250728_190822-sknez8gy/logs/debug-core.log"}
+{"time":"2025-07-28T19:08:23.98664416+09:00","level":"INFO","msg":"stream: created new stream","id":"sknez8gy"}
+{"time":"2025-07-28T19:08:23.986753207+09:00","level":"INFO","msg":"stream: started","id":"sknez8gy"}
+{"time":"2025-07-28T19:08:23.986788898+09:00","level":"INFO","msg":"handler: started","stream_id":"sknez8gy"}
+{"time":"2025-07-28T19:08:23.98678589+09:00","level":"INFO","msg":"sender: started","stream_id":"sknez8gy"}
+{"time":"2025-07-28T19:08:23.986778377+09:00","level":"INFO","msg":"writer: Do: started","stream_id":"sknez8gy"}
+{"time":"2025-07-28T19:08:24.321002358+09:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-07-29T03:39:15.221468489+09:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-07-29T03:39:15.221835664+09:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-07-29T03:39:15.998459545+09:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-07-29T03:39:16.234375308+09:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading summary, console lines 66-66","runtime_seconds":0.224530935}],"total_operations":1}}
+{"time":"2025-07-29T03:39:16.316220206+09:00","level":"INFO","msg":"stream: closing","id":"sknez8gy"}
+{"time":"2025-07-29T03:39:16.316275355+09:00","level":"INFO","msg":"handler: closed","stream_id":"sknez8gy"}
+{"time":"2025-07-29T03:39:16.316293317+09:00","level":"INFO","msg":"writer: Close: closed","stream_id":"sknez8gy"}
+{"time":"2025-07-29T03:39:16.316307707+09:00","level":"INFO","msg":"sender: closed","stream_id":"sknez8gy"}
+{"time":"2025-07-29T03:39:16.316422727+09:00","level":"INFO","msg":"stream: closed","id":"sknez8gy"}

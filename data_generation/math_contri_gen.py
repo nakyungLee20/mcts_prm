@@ -9,7 +9,7 @@ from config import PRMConfig
 from contri_reward import ContriRewardvLLM
 
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
-os.environ["CUDA_VISIBLE_DEVICES"] = "2"
+os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 def read_jsonl(file_path):
@@ -31,14 +31,14 @@ def main():
     model_name = "mistralai/Mathstral-7B-v0.1"  
     contri = ContriRewardvLLM(config=cfg, model_name=model_name)
 
-    output_file = "/home/leena/ccc_eval/mcts_prm/cmi_samples/math_contri_mistral_6228_fin.jsonl"
+    output_file = "/home/leena/ccc_eval/mcts_prm/cmi_samples/math_contri_mistral_4682_6000.jsonl"
     with open(output_file, "w", encoding="utf-8") as f:
-        for i, entry in enumerate(contri.math_reward_dataset_vllm(split="train", start=6228, take=0)):
+        for i, entry in enumerate(contri.math_reward_dataset_vllm(split="train", start=4682, take=6000)):
             f.write(json.dumps(entry, ensure_ascii=False) + "\n")
             f.flush() 
 
     print(f"Data saved to {output_file}")
-    jsonl_to_json(output_file, "/home/leena/ccc_eval/mcts_prm/cmi_samples/math_contri_mistral_6228_fin.json")
+    jsonl_to_json(output_file, "/home/leena/ccc_eval/mcts_prm/cmi_samples/math_contri_mistral_4682_6000.json")
 
 if __name__ == "__main__":
     main() 

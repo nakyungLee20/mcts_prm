@@ -1,0 +1,30 @@
+[Epoch 1/12] train=0.3402  val=0.3421
+[CKPT] Saved ⇒ checkpoints/scratch/ori/incorr/best_prm.pt
+[Best] New best validation loss: 0.3421
+[Epoch 2/12] train=0.3375  val=0.3352
+[CKPT] Saved ⇒ checkpoints/scratch/ori/incorr/best_prm.pt
+[Best] New best validation loss: 0.3352
+[Epoch 3/12] train=0.3368  val=0.3344
+[CKPT] Saved ⇒ checkpoints/scratch/ori/incorr/best_prm.pt
+[Best] New best validation loss: 0.3344
+[Epoch 4/12] train=0.3363  val=0.3421
+[Early-Stopping] No improvement for 1/8 epochs
+[Epoch 5/12] train=0.3365  val=0.3345
+[Early-Stopping] No improvement for 2/8 epochs
+[Epoch 6/12] train=0.3363  val=0.3355
+[Early-Stopping] No improvement for 3/8 epochs
+[Epoch 7/12] train=0.3360  val=0.3349
+[Early-Stopping] No improvement for 4/8 epochs
+[Epoch 8/12] train=0.3363  val=0.3357
+[Early-Stopping] No improvement for 5/8 epochs
+[Epoch 9/12] train=0.3360  val=0.3342
+[CKPT] Saved ⇒ checkpoints/scratch/ori/incorr/best_prm.pt
+[Best] New best validation loss: 0.3342
+[Epoch 10/12] train=0.3360  val=0.3350
+[Early-Stopping] No improvement for 1/8 epochs
+[Epoch 11/12] train=0.3359  val=0.3348
+[Early-Stopping] No improvement for 2/8 epochs
+[Epoch 12/12] train=0.3361  val=0.3355
+[Early-Stopping] No improvement for 3/8 epochs
+[CKPT] Saved ⇒ checkpoints/scratch/ori/incorr/last_prm.pt
+PRM Training complete. Loss history: {'train': [0.3401632852797516, 0.3375349528569719, 0.33677704422106436, 0.3362650793572722, 0.33653188441390397, 0.33631128655748105, 0.33596170624795746, 0.3362540082544551, 0.33599630567204825, 0.3360128010138077, 0.3359184835170101, 0.3360751147579192], 'val': [0.3421272961970638, 0.3352244323229088, 0.33441908679464283, 0.3420797849402708, 0.33446456754908843, 0.33545910621828895, 0.33493242785334587, 0.3357143397716915, 0.33419739016715216, 0.3349954351125395, 0.334828666794826, 0.33546817532795314]}

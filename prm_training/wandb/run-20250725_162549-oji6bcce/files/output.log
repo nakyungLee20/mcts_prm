@@ -1,0 +1,57 @@
+  0%|                                                                                          | 0/3008 [00:00<?, ?it/s]`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`...
+/home/leena/anaconda3/envs/prm/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py:838: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.5 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  return fn(*args, **kwargs)
+  7%|████▉                                                                      | 200/3008 [1:16:52<20:13:21, 25.93s/it]We detected that you are passing `past_key_values` as a tuple and this is deprecated and will be removed in v4.43. Please use an appropriate `Cache` class (https://huggingface.co/docs/transformers/v4.41.3/en/internal/generation_utils#transformers.Cache)
+{'loss': 0.1807, 'grad_norm': 14.322922706604004, 'learning_rate': 6.490066225165563e-05, 'epoch': 0.07}
+{'loss': 0.2334, 'grad_norm': 7.569911479949951, 'learning_rate': 0.00013112582781456955, 'epoch': 0.13}
+{'loss': 0.1417, 'grad_norm': 4.945129871368408, 'learning_rate': 0.00019735099337748346, 'epoch': 0.2}
+{'loss': 0.0765, 'grad_norm': 0.5863316655158997, 'learning_rate': 0.00019986073854859012, 'epoch': 0.27}
+ 20%|██████████████▉                                                            | 600/3008 [4:41:23<17:17:12, 25.84s/it]/home/leena/anaconda3/envs/prm/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py:838: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.5 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  return fn(*args, **kwargs)                                                                                            
+{'eval_loss': 0.07120443880558014, 'eval_runtime': 645.9349, 'eval_samples_per_second': 4.137, 'eval_steps_per_second': 0.517, 'epoch': 0.27}
+{'loss': 0.0748, 'grad_norm': 5.795603275299072, 'learning_rate': 0.0001994199290670147, 'epoch': 0.33}
+{'loss': 0.0741, 'grad_norm': 0.29478350281715393, 'learning_rate': 0.00019867866189940056, 'epoch': 0.4}
+{'loss': 0.0632, 'grad_norm': 0.8064057230949402, 'learning_rate': 0.00019763917723461134, 'epoch': 0.47}
+{'loss': 0.059, 'grad_norm': 1.2685000896453857, 'learning_rate': 0.00019630461650676378, 'epoch': 0.53}
+{'eval_loss': 0.06051819026470184, 'eval_runtime': 642.3162, 'eval_samples_per_second': 4.16, 'eval_steps_per_second': 0.52, 'epoch': 0.53}
+{'loss': 0.06, 'grad_norm': 0.9634380340576172, 'learning_rate': 0.00019467901290147702, 'epoch': 0.6}
+{'loss': 0.0568, 'grad_norm': 0.6984259486198425, 'learning_rate': 0.00019276727916715312, 'epoch': 0.67}
+{'loss': 0.0516, 'grad_norm': 1.7260874509811401, 'learning_rate': 0.00019057519276812472, 'epoch': 0.73}
+{'loss': 0.0514, 'grad_norm': 1.6848522424697876, 'learning_rate': 0.00018810937842453828, 'epoch': 0.8}
+{'eval_loss': 0.057792749255895615, 'eval_runtime': 642.3456, 'eval_samples_per_second': 4.16, 'eval_steps_per_second': 0.52, 'epoch': 0.8}
+ 40%|█████████████████████████████▌                                            | 1200/3008 [9:31:55<12:59:03, 25.85s/it]Traceback (most recent call last):
+{'loss': 0.0461, 'grad_norm': 0.2844352722167969, 'learning_rate': 0.00018537728809173945, 'epoch': 0.86}
+{'loss': 0.0553, 'grad_norm': 3.0749475955963135, 'learning_rate': 0.000182387178439665, 'epoch': 0.93}
+{'loss': 0.0481, 'grad_norm': 0.2240307778120041, 'learning_rate': 0.00017914808590030088, 'epoch': 1.0}
+{'loss': 0.0427, 'grad_norm': 0.9020771980285645, 'learning_rate': 0.00017566979935861585, 'epoch': 1.06}
+  File "/home/leena/ccc_eval/mcts_prm/prm_training/train_prm_ft.py", line 253, in <module>                              
+{'eval_loss': 0.05661647021770477, 'eval_runtime': 643.3297, 'eval_samples_per_second': 4.153, 'eval_steps_per_second': 0.519, 'epoch': 1.06}
+{'loss': 0.0359, 'grad_norm': 0.7333658933639526, 'learning_rate': 0.00017196283056950158, 'epoch': 1.13}
+{'loss': 0.0343, 'grad_norm': 0.9345108270645142, 'learning_rate': 0.00016803838239012206, 'epoch': 1.2}
+{'loss': 0.0418, 'grad_norm': 0.3383065164089203, 'learning_rate': 0.00016390831492367816, 'epoch': 1.26}
+{'loss': 0.0363, 'grad_norm': 1.2354364395141602, 'learning_rate': 0.0001595851096769039, 'epoch': 1.33}
+{'eval_loss': 0.05383411422371864, 'eval_runtime': 643.2795, 'eval_samples_per_second': 4.154, 'eval_steps_per_second': 0.519, 'epoch': 1.33}
+{'loss': 0.037, 'grad_norm': 0.3217528462409973, 'learning_rate': 0.00015508183183961499, 'epoch': 1.4}
+{'loss': 0.0317, 'grad_norm': 0.8630402684211731, 'learning_rate': 0.00015041209080030398, 'epoch': 1.46}
+{'loss': 0.0348, 'grad_norm': 1.0235350131988525, 'learning_rate': 0.0001455899990171092, 'epoch': 1.53}
+{'loss': 0.0378, 'grad_norm': 0.4171419143676758, 'learning_rate': 0.00014063012936845287, 'epoch': 1.6}
+{'eval_loss': 0.05179135501384735, 'eval_runtime': 644.5557, 'eval_samples_per_second': 4.145, 'eval_steps_per_second': 0.518, 'epoch': 1.6}
+    main()
+  File "/home/leena/ccc_eval/mcts_prm/prm_training/train_prm_ft.py", line 246, in main
+    trainer.train()
+  File "/home/leena/anaconda3/envs/prm/lib/python3.12/site-packages/transformers/trainer.py", line 2240, in train
+    return inner_training_loop(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/leena/anaconda3/envs/prm/lib/python3.12/site-packages/transformers/trainer.py", line 2622, in _inner_training_loop
+    self._maybe_log_save_evaluate(
+  File "/home/leena/anaconda3/envs/prm/lib/python3.12/site-packages/transformers/trainer.py", line 3102, in _maybe_log_save_evaluate
+    self._save_checkpoint(model, trial)
+  File "/home/leena/anaconda3/envs/prm/lib/python3.12/site-packages/transformers/trainer.py", line 3199, in _save_checkpoint
+    self.save_model(output_dir, _internal_call=True)
+  File "/home/leena/anaconda3/envs/prm/lib/python3.12/site-packages/transformers/trainer.py", line 3911, in save_model
+    self._save(output_dir)
+  File "/home/leena/anaconda3/envs/prm/lib/python3.12/site-packages/transformers/trainer.py", line 4009, in _save
+    safetensors.torch.save_file(
+  File "/home/leena/anaconda3/envs/prm/lib/python3.12/site-packages/safetensors/torch.py", line 286, in save_file
+    serialize_file(_flatten(tensors), filename, metadata=metadata)
+safetensors_rust.SafetensorError: Error while serializing: IoError(Os { code: 28, kind: StorageFull, message: "No space left on device" })

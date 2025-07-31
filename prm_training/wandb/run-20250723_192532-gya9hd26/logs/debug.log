@@ -19,3 +19,4 @@ config: {'_wandb': {}}
 2025-07-23 19:25:33,751 INFO    MainThread:2265097 [wandb_run.py:_redirect():2370] Wrapping output streams.
 2025-07-23 19:25:33,751 INFO    MainThread:2265097 [wandb_run.py:_redirect():2393] Redirects installed.
 2025-07-23 19:25:33,752 INFO    MainThread:2265097 [wandb_init.py:init():1078] run started, returning control to user process
+2025-07-24 12:07:21,491 INFO    MsgRouterThr:2265097 [mailbox.py:close():129] [no run ID] Closing mailbox, abandoning 1 handles.

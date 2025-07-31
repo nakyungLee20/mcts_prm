@@ -1,0 +1,17 @@
+{"time":"2025-07-28T21:25:39.815082478+09:00","level":"INFO","msg":"stream: starting","core version":"0.20.1","symlink path":"/home/leena/ccc_eval/mcts_prm/prm_training/wandb/run-20250728_212539-duvjmibi/logs/debug-core.log"}
+{"time":"2025-07-28T21:25:40.88261441+09:00","level":"INFO","msg":"stream: created new stream","id":"duvjmibi"}
+{"time":"2025-07-28T21:25:40.882715824+09:00","level":"INFO","msg":"stream: started","id":"duvjmibi"}
+{"time":"2025-07-28T21:25:40.882732572+09:00","level":"INFO","msg":"writer: Do: started","stream_id":"duvjmibi"}
+{"time":"2025-07-28T21:25:40.882744005+09:00","level":"INFO","msg":"handler: started","stream_id":"duvjmibi"}
+{"time":"2025-07-28T21:25:40.882782325+09:00","level":"INFO","msg":"sender: started","stream_id":"duvjmibi"}
+{"time":"2025-07-28T21:25:41.185547095+09:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-07-29T05:41:26.543081695+09:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": context deadline exceeded"}
+{"time":"2025-07-29T13:01:26.740880288+09:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": net/http: request canceled (Client.Timeout exceeded while awaiting headers)"}
+{"time":"2025-07-29T20:30:38.710593312+09:00","level":"INFO","msg":"stream: closing","id":"duvjmibi"}
+{"time":"2025-07-29T20:30:38.710637893+09:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-07-29T20:30:38.71070003+09:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-07-29T20:30:39.331797552+09:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-07-29T20:30:39.60897889+09:00","level":"INFO","msg":"handler: closed","stream_id":"duvjmibi"}
+{"time":"2025-07-29T20:30:39.609048354+09:00","level":"INFO","msg":"writer: Close: closed","stream_id":"duvjmibi"}
+{"time":"2025-07-29T20:30:39.609064517+09:00","level":"INFO","msg":"sender: closed","stream_id":"duvjmibi"}
+{"time":"2025-07-29T20:30:39.609128758+09:00","level":"INFO","msg":"stream: closed","id":"duvjmibi"}

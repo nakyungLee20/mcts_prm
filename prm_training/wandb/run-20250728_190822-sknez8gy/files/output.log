@@ -1,0 +1,67 @@
+  0%|                                                                                                                    | 0/2256 [00:00<?, ?it/s]/home/leena/anaconda3/envs/prm/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py:838: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.5 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  return fn(*args, **kwargs)
+ 27%|███████████████████████████▏                                                                          | 600/2256 [2:15:30<5:31:06, 12.00s/it]/home/leena/anaconda3/envs/prm/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py:838: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.5 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+{'loss': 0.2815, 'grad_norm': 17.514678955078125, 'learning_rate': 8.672566371681417e-05, 'epoch': 0.07}
+{'loss': 0.2098, 'grad_norm': 9.210819244384766, 'learning_rate': 0.0001752212389380531, 'epoch': 0.13}
+{'loss': 0.1744, 'grad_norm': 0.8796486854553223, 'learning_rate': 0.00019986077103132597, 'epoch': 0.2}
+{'loss': 0.1538, 'grad_norm': 0.6494779586791992, 'learning_rate': 0.00019920631716926031, 'epoch': 0.27}
+  return fn(*args, **kwargs)                                                                                                                      
+{'eval_loss': 0.16184650361537933, 'eval_runtime': 309.8998, 'eval_samples_per_second': 8.622, 'eval_steps_per_second': 1.078, 'epoch': 0.27}
+{'loss': 0.1412, 'grad_norm': 1.771586298942566, 'learning_rate': 0.00019801909266536373, 'epoch': 0.33}
+{'loss': 0.151, 'grad_norm': 1.5852007865905762, 'learning_rate': 0.00019630547330677347, 'epoch': 0.4}
+{'loss': 0.143, 'grad_norm': 0.3936435878276825, 'learning_rate': 0.00019407466179460352, 'epoch': 0.47}
+{'loss': 0.1411, 'grad_norm': 0.4119277000427246, 'learning_rate': 0.00019133863832240463, 'epoch': 0.53}
+{'eval_loss': 0.13196846842765808, 'eval_runtime': 308.1311, 'eval_samples_per_second': 8.672, 'eval_steps_per_second': 1.084, 'epoch': 0.53}
+{'loss': 0.1373, 'grad_norm': 1.199957013130188, 'learning_rate': 0.00018811209623857374, 'epoch': 0.6}
+{'loss': 0.1381, 'grad_norm': 0.6683852672576904, 'learning_rate': 0.00018441236313822726, 'epoch': 0.67}
+{'loss': 0.135, 'grad_norm': 0.6149977445602417, 'learning_rate': 0.0001802593078083005, 'epoch': 0.73}
+{'loss': 0.1368, 'grad_norm': 1.3182376623153687, 'learning_rate': 0.0001756752335256091, 'epoch': 0.8}
+{'eval_loss': 0.13027848303318024, 'eval_runtime': 308.117, 'eval_samples_per_second': 8.672, 'eval_steps_per_second': 1.084, 'epoch': 0.8}
+ 53%|███████████████████████████████████████▉                                   | 1200/2256 [4:31:05<3:31:41, 12.03s/it]/home/leena/anaconda3/envs/prm/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py:838: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.5 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+{'loss': 0.1324, 'grad_norm': 1.822068214416504, 'learning_rate': 0.00017068475828089673, 'epoch': 0.86}
+{'loss': 0.1269, 'grad_norm': 1.5161792039871216, 'learning_rate': 0.00016531468257210583, 'epoch': 0.93}
+{'loss': 0.1397, 'grad_norm': 1.1183040142059326, 'learning_rate': 0.00015959384547686457, 'epoch': 1.0}
+{'loss': 0.1178, 'grad_norm': 0.8213253021240234, 'learning_rate': 0.0001535529697771289, 'epoch': 1.06}
+  return fn(*args, **kwargs)                                                                                            
+{'eval_loss': 0.12607447803020477, 'eval_runtime': 308.3801, 'eval_samples_per_second': 8.665, 'eval_steps_per_second': 1.083, 'epoch': 1.06}
+{'loss': 0.1218, 'grad_norm': 0.8415993452072144, 'learning_rate': 0.00014722449696771085, 'epoch': 1.13}
+{'loss': 0.1213, 'grad_norm': 0.4801287353038788, 'learning_rate': 0.00014064241303475214, 'epoch': 1.2}
+{'loss': 0.121, 'grad_norm': 1.2946460247039795, 'learning_rate': 0.0001338420659397698, 'epoch': 1.26}
+{'loss': 0.1185, 'grad_norm': 2.5487890243530273, 'learning_rate': 0.00012685997578944499, 'epoch': 1.33}
+{'eval_loss': 0.1252126693725586, 'eval_runtime': 308.538, 'eval_samples_per_second': 8.66, 'eval_steps_per_second': 1.083, 'epoch': 1.33}
+{'loss': 0.1169, 'grad_norm': 1.9722119569778442, 'learning_rate': 0.00011973363871060563, 'epoch': 1.4}
+{'loss': 0.124, 'grad_norm': 0.44894176721572876, 'learning_rate': 0.000112501325483659, 'epoch': 1.46}
+{'loss': 0.1172, 'grad_norm': 0.9026513695716858, 'learning_rate': 0.00010520187601587899, 'epoch': 1.53}
+{'loss': 0.1173, 'grad_norm': 2.1174204349517822, 'learning_rate': 9.787449075829463e-05, 'epoch': 1.6}
+{'eval_loss': 0.12411254644393921, 'eval_runtime': 309.8608, 'eval_samples_per_second': 8.623, 'eval_steps_per_second': 1.078, 'epoch': 1.6}
+ 80%|███████████████████████████████████████████████████████████▊               | 1800/2256 [6:47:10<1:31:37, 12.06s/it]/home/leena/anaconda3/envs/prm/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py:838: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.5 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+{'loss': 0.1161, 'grad_norm': 0.987023115158081, 'learning_rate': 9.05585201863395e-05, 'epoch': 1.66}
+{'loss': 0.115, 'grad_norm': 1.487362027168274, 'learning_rate': 8.329325347482075e-05, 'epoch': 1.73}
+{'loss': 0.119, 'grad_norm': 0.9394508600234985, 'learning_rate': 7.611770750209265e-05, 'epoch': 1.8}
+{'loss': 0.1206, 'grad_norm': 0.5646651983261108, 'learning_rate': 6.907041731655195e-05, 'epoch': 1.86}
+  return fn(*args, **kwargs)                                                                                            
+{'eval_loss': 0.12559662759304047, 'eval_runtime': 310.0602, 'eval_samples_per_second': 8.618, 'eval_steps_per_second': 1.077, 'epoch': 1.86}
+{'loss': 0.1123, 'grad_norm': 0.43539270758628845, 'learning_rate': 6.218922919071885e-05, 'epoch': 1.93}
+{'loss': 0.1241, 'grad_norm': 1.3272725343704224, 'learning_rate': 5.551109737427187e-05, 'epoch': 2.0}
+{'loss': 0.0837, 'grad_norm': 0.6439576745033264, 'learning_rate': 4.907188563753945e-05, 'epoch': 2.06}
+{'loss': 0.073, 'grad_norm': 1.3129793405532837, 'learning_rate': 4.2906174671225e-05, 'epoch': 2.13}
+{'eval_loss': 0.13502901792526245, 'eval_runtime': 310.3952, 'eval_samples_per_second': 8.608, 'eval_steps_per_second': 1.076, 'epoch': 2.13}
+{'loss': 0.0749, 'grad_norm': 1.2855490446090698, 'learning_rate': 3.7047076376693327e-05, 'epoch': 2.19}
+{'loss': 0.0794, 'grad_norm': 1.1261935234069824, 'learning_rate': 3.1526056044139594e-05, 'epoch': 2.26}
+{'loss': 0.0763, 'grad_norm': 0.9510660767555237, 'learning_rate': 2.6372763373603714e-05, 'epoch': 2.33}
+{'loss': 0.0743, 'grad_norm': 0.6722267866134644, 'learning_rate': 2.1614873246302647e-05, 'epoch': 2.39}
+{'eval_loss': 0.13778690993785858, 'eval_runtime': 311.2771, 'eval_samples_per_second': 8.584, 'eval_steps_per_second': 1.073, 'epoch': 2.39}
+100%|█████████████████████████████████████████████████████████████████████████████| 2256/2256 [8:29:18<00:00, 10.25s/it]There were unexpected keys in the checkpoint model loaded: ['backbone.base_model.model.model.layers.0.self_attn.q_proj.base_layer.weight.absmax', 'backbone.base_model.model.model.layers.0.self_attn.q_proj.base_layer.weight.nested_absmax', 'backbone.base_model.model.model.layers.0.self_attn.q_proj.base_layer.weight.nested_quant_map', 'backbone.base_model.model.model.layers.0.self_attn.q_proj.base_layer.weight.quant_map', 'backbone.base_model.model.model.layers.0.self_attn.q_proj.base_layer.weight.quant_state.bitsandbytes__nf4', 'backbone.base_model.model.model.layers.0.self_attn.k_proj.base_layer.weight.absmax', 'backbone.base_model.model.model.layers.0.self_attn.k_proj.base_layer.weight.nested_absmax', 'backbone.base_model.model.model.layers.0.self_attn.k_proj.base_layer.weight.nested_quant_map', 'backbone.base_model.model.model.layers.0.self_attn.k_proj.base_layer.weight.quant_map', 'backbone.base_model.model.model.layers.0.self_attn.k_proj.base_layer.weight.quant_state.bitsandbytes__nf4', 'backbone.base_model.model.model.layers.0.self_attn.v_proj.base_layer.weight.absmax', 'backbone.base_model.model.model.layers.0.self_attn.v_proj.base_layer.weight.nested_absmax', 'backbone.base_model.model.model.layers.0.self_attn.v_proj.base_layer.weight.nested_quant_map', 'backbone.base_model.model.model.layers.0.self_attn.v_proj.base_layer.weight.quant_map', 'backbone.base_model.model.model.layers.0.self_attn.v_proj.base_layer.weight.quant_state.bitsandbytes__nf4', 'backbone.base_model.model.model.layers.0.self_attn.o_proj.base_layer.weight.absmax', 'backbone.base_model.model.model.layers.0.self_attn.o_proj.base_layer.weight.nested_absmax', 'backbone.base_model.model.model.layers.0.self_attn.o_proj.base_layer.weight.nested_quant_map', 'backbone.base_model.model.model.layers.0.self_attn.o_proj.base_layer.weight.quant_map', 'backbone.base_model.model.model.layers.0.self_attn.o_proj.base_layer.weight.quant_state.bitsandbytes__nf4', 'backbone.base_model.model.model.layers.0.mlp.gate_proj.weight.absmax', 'backbone.base_model.model.model.layers.0.mlp.gate_proj.weight.nested_absmax', 'backbone.base_model.model.model.layers.0.mlp.gate_proj.weight.nested_quant_map', 'backbone.base_model.model.model.layers.0.mlp.gate_proj.weight.quant_map', 'backbone.base_model.model.model.layers.0.mlp.gate_proj.weight.quant_state.bitsandbytes__nf4', 'backbone.base_model.model.model.layers.0.mlp.up_proj.weight.absmax', 'backbone.base_model.model.model.layers.0.mlp.up_proj.weight.nested_absmax', 'backbone.base_model.model.model.layers.0.mlp.up_proj.weight.nested_quant_map', 'backbone.base_model.model.model.layers.0.mlp.up_proj.weight.quant_map', 'backbone.base_model.model.model.layers.0.mlp.up_proj.weight.quant_state.bitsandbytes__nf4', 'backbone.base_model.model.model.layers.0.mlp.down_proj.weight.absmax', 'backbone.base_model.model.model.layers.0.mlp.down_proj.weight.nested_absmax', 'backbone.base_model.model.model.layers.0.mlp.down_proj.weight.nested_quant_map', 'backbone.base_model.model.model.layers.0.mlp.down_proj.weight.quant_map', 'backbone.base_model.model.model.layers.0.mlp.down_proj.weight.quant_state.bitsandbytes__nf4', 'backbone.base_model.model.model.layers.1.self_attn.q_proj.base_layer.weight.absmax', 'backbone.base_model.model.model.layers.1.self_attn.q_proj.base_layer.weight.nested_absmax', 'backbone.base_model.model.model.layers.1.self_attn.q_proj.base_layer.weight.nested_quant_map', 'backbone.base_model.model.model.layers.1.self_attn.q_proj.base_layer.weight.quant_map', 'backbone.base_model.model.model.layers.1.self_attn.q_proj.base_layer.weight.quant_state.bitsandbytes__nf4', 'backbone.base_model.model.model.layers.1.self_attn.k_proj.base_layer.weight.absmax', 'backbone.base_model.model.model.layers.1.self_attn.k_proj.base_layer.weight.nested_absmax', 'backbone.base_model.model.model.layers.1.self_attn.k_proj.base_layer.weight.nested_quant_map', 'backbone.base_model.model.model.layers.1.self_attn.k_proj.base_layer.weight.
+{'loss': 0.0717, 'grad_norm': 1.9948872327804565, 'learning_rate': 1.727793710139072e-05, 'epoch': 2.46}
+{'loss': 0.0681, 'grad_norm': 0.7304530739784241, 'learning_rate': 1.3385245716304696e-05, 'epoch': 2.53}
+{'loss': 0.0685, 'grad_norm': 0.5355414152145386, 'learning_rate': 9.957704127607325e-06, 'epoch': 2.59}
+{'loss': 0.0678, 'grad_norm': 1.2765737771987915, 'learning_rate': 7.013719364046556e-06, 'epoch': 2.66}
+100%|█████████████████████████████████████████████████████████████████████████████| 2256/2256 [8:30:19<00:00, 13.57s/it]
+{'eval_loss': 0.137534037232399, 'eval_runtime': 310.5653, 'eval_samples_per_second': 8.604, 'eval_steps_per_second': 1.075, 'epoch': 2.66}
+{'loss': 0.0687, 'grad_norm': 0.6028882265090942, 'learning_rate': 4.569101594740433e-06, 'epoch': 2.73}
+{'loss': 0.0648, 'grad_norm': 0.6909120082855225, 'learning_rate': 2.636979223354619e-06, 'epoch': 2.79}
+{'loss': 0.0691, 'grad_norm': 1.0800408124923706, 'learning_rate': 1.2277283842450193e-06, 'epoch': 2.86}
+{'loss': 0.0711, 'grad_norm': 0.622979998588562, 'learning_rate': 3.4891721919405594e-07, 'epoch': 2.93}
+{'eval_loss': 0.13750094175338745, 'eval_runtime': 310.6646, 'eval_samples_per_second': 8.601, 'eval_steps_per_second': 1.075, 'epoch': 2.93}
+{'loss': 0.0661, 'grad_norm': 0.7593020796775818, 'learning_rate': 5.265233993445584e-09, 'epoch': 2.99}
+{'train_runtime': 30621.6122, 'train_samples_per_second': 2.356, 'train_steps_per_second': 0.074, 'train_loss': 0.11546712096595595, 'epoch': 3.0}

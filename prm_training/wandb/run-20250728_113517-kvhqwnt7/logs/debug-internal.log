@@ -1,0 +1,19 @@
+{"time":"2025-07-28T11:35:17.964194018+09:00","level":"INFO","msg":"stream: starting","core version":"0.20.1","symlink path":"/home/leena/ccc_eval/mcts_prm/prm_training/wandb/run-20250728_113517-kvhqwnt7/logs/debug-core.log"}
+{"time":"2025-07-28T11:35:19.190539658+09:00","level":"INFO","msg":"stream: created new stream","id":"kvhqwnt7"}
+{"time":"2025-07-28T11:35:19.190588734+09:00","level":"INFO","msg":"stream: started","id":"kvhqwnt7"}
+{"time":"2025-07-28T11:35:19.190595728+09:00","level":"INFO","msg":"writer: Do: started","stream_id":"kvhqwnt7"}
+{"time":"2025-07-28T11:35:19.190599953+09:00","level":"INFO","msg":"handler: started","stream_id":"kvhqwnt7"}
+{"time":"2025-07-28T11:35:19.190659236+09:00","level":"INFO","msg":"sender: started","stream_id":"kvhqwnt7"}
+{"time":"2025-07-28T11:35:19.54379492+09:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-07-29T05:41:22.948234211+09:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)"}
+{"time":"2025-07-29T07:02:17.065994393+09:00","level":"INFO","msg":"api: retrying HTTP error","status":500,"url":"https://api.wandb.ai/graphql","body":"{\"errors\":[{\"message\":\"context deadline exceeded\",\"path\":[\"project\",\"run\"]}],\"data\":{\"project\":{\"run\":null}}}"}
+{"time":"2025-07-30T05:08:08.548992812+09:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": net/http: request canceled (Client.Timeout exceeded while awaiting headers)"}
+{"time":"2025-07-30T05:37:18.438560016+09:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-07-30T05:37:18.438658202+09:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-07-30T05:37:19.169603204+09:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-07-30T05:37:19.424030432+09:00","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2025-07-30T05:37:19.430414006+09:00","level":"INFO","msg":"stream: closing","id":"kvhqwnt7"}
+{"time":"2025-07-30T05:37:19.43044709+09:00","level":"INFO","msg":"handler: closed","stream_id":"kvhqwnt7"}
+{"time":"2025-07-30T05:37:19.430463874+09:00","level":"INFO","msg":"writer: Close: closed","stream_id":"kvhqwnt7"}
+{"time":"2025-07-30T05:37:19.430473066+09:00","level":"INFO","msg":"sender: closed","stream_id":"kvhqwnt7"}
+{"time":"2025-07-30T05:37:19.430578087+09:00","level":"INFO","msg":"stream: closed","id":"kvhqwnt7"}

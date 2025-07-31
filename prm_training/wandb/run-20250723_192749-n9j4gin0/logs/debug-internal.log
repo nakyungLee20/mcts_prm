@@ -5,3 +5,14 @@
 {"time":"2025-07-23T19:27:50.194683683+09:00","level":"INFO","msg":"writer: Do: started","stream_id":"n9j4gin0"}
 {"time":"2025-07-23T19:27:50.194695938+09:00","level":"INFO","msg":"sender: started","stream_id":"n9j4gin0"}
 {"time":"2025-07-23T19:27:50.556771559+09:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-07-24T04:02:36.372678594+09:00","level":"INFO","msg":"api: retrying HTTP error","status":502,"url":"https://api.wandb.ai/files/leena12/mc_prm/n9j4gin0/file_stream","body":"\n<html><head>\n<meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n<title>502 Server Error</title>\n</head>\n<body text=#000000 bgcolor=#ffffff>\n<h1>Error: Server Error</h1>\n<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>\n<h2></h2>\n</body></html>\n"}
+{"time":"2025-07-24T05:01:48.304029945+09:00","level":"INFO","msg":"api: retrying HTTP error","status":502,"url":"https://api.wandb.ai/files/leena12/mc_prm/n9j4gin0/file_stream","body":"\n<html><head>\n<meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n<title>502 Server Error</title>\n</head>\n<body text=#000000 bgcolor=#ffffff>\n<h1>Error: Server Error</h1>\n<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>\n<h2></h2>\n</body></html>\n"}
+{"time":"2025-07-24T08:46:54.299182077+09:00","level":"INFO","msg":"api: retrying HTTP error","status":502,"url":"https://api.wandb.ai/files/leena12/mc_prm/n9j4gin0/file_stream","body":"\n<html><head>\n<meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n<title>502 Server Error</title>\n</head>\n<body text=#000000 bgcolor=#ffffff>\n<h1>Error: Server Error</h1>\n<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>\n<h2></h2>\n</body></html>\n"}
+{"time":"2025-07-24T16:37:36.811082559+09:00","level":"INFO","msg":"stream: closing","id":"n9j4gin0"}
+{"time":"2025-07-24T16:37:36.811141873+09:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-07-24T16:37:36.8112386+09:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-07-24T16:37:37.469383118+09:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-07-24T16:37:37.752209221+09:00","level":"INFO","msg":"handler: closed","stream_id":"n9j4gin0"}
+{"time":"2025-07-24T16:37:37.752297299+09:00","level":"INFO","msg":"writer: Close: closed","stream_id":"n9j4gin0"}
+{"time":"2025-07-24T16:37:37.75230839+09:00","level":"INFO","msg":"sender: closed","stream_id":"n9j4gin0"}
+{"time":"2025-07-24T16:37:37.752468244+09:00","level":"INFO","msg":"stream: closed","id":"n9j4gin0"}

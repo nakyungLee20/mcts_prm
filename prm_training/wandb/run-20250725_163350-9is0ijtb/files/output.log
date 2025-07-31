@@ -1,0 +1,25 @@
+  0%|                                                                                          | 0/3008 [00:00<?, ?it/s]`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`...
+/home/leena/anaconda3/envs/prm/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py:838: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.5 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  return fn(*args, **kwargs)
+  7%|████▉                                                                      | 200/3008 [1:26:25<20:08:40, 25.83s/it]We detected that you are passing `past_key_values` as a tuple and this is deprecated and will be removed in v4.43. Please use an appropriate `Cache` class (https://huggingface.co/docs/transformers/v4.41.3/en/internal/generation_utils#transformers.Cache)
+{'loss': 0.304, 'grad_norm': 11.765402793884277, 'learning_rate': 6.490066225165563e-05, 'epoch': 0.07}
+{'loss': 0.2954, 'grad_norm': 20.142715454101562, 'learning_rate': 0.00013112582781456955, 'epoch': 0.13}
+{'loss': 0.2103, 'grad_norm': 6.490222454071045, 'learning_rate': 0.00019735099337748346, 'epoch': 0.2}
+{'loss': 0.1735, 'grad_norm': 4.30068302154541, 'learning_rate': 0.00019986073854859012, 'epoch': 0.27}
+ 20%|██████████████▉                                                            | 600/3008 [4:50:43<17:15:43, 25.81s/it]/home/leena/anaconda3/envs/prm/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py:838: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.5 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  return fn(*args, **kwargs)                                                                                            
+{'eval_loss': 0.1778683364391327, 'eval_runtime': 643.2447, 'eval_samples_per_second': 4.154, 'eval_steps_per_second': 0.519, 'epoch': 0.27}
+{'loss': 0.1537, 'grad_norm': 0.6658496856689453, 'learning_rate': 0.0001994199290670147, 'epoch': 0.33}
+{'loss': 0.1466, 'grad_norm': 1.554516315460205, 'learning_rate': 0.00019867866189940056, 'epoch': 0.4}
+{'loss': 0.1469, 'grad_norm': 0.285146564245224, 'learning_rate': 0.00019763917723461134, 'epoch': 0.47}
+{'loss': 0.1448, 'grad_norm': 0.3675646185874939, 'learning_rate': 0.00019630461650676378, 'epoch': 0.53}
+{'eval_loss': 0.1356990486383438, 'eval_runtime': 642.6683, 'eval_samples_per_second': 4.158, 'eval_steps_per_second': 0.52, 'epoch': 0.53}
+{'loss': 0.1398, 'grad_norm': 0.8304954767227173, 'learning_rate': 0.00019467901290147702, 'epoch': 0.6}
+{'loss': 0.1375, 'grad_norm': 0.508998453617096, 'learning_rate': 0.00019276727916715312, 'epoch': 0.67}
+{'loss': 0.1361, 'grad_norm': 0.7389993667602539, 'learning_rate': 0.00019057519276812472, 'epoch': 0.73}
+{'loss': 0.142, 'grad_norm': 1.5812188386917114, 'learning_rate': 0.00018810937842453828, 'epoch': 0.8}
+{'eval_loss': 0.13372358679771423, 'eval_runtime': 642.3106, 'eval_samples_per_second': 4.16, 'eval_steps_per_second': 0.52, 'epoch': 0.8}
+ 40%|█████████████████████████████▋                                             | 1191/3008 [9:25:18<6:31:51, 12.94s/it]
+{'loss': 0.1347, 'grad_norm': 1.5918247699737549, 'learning_rate': 0.00018537728809173945, 'epoch': 0.86}
+{'loss': 0.1294, 'grad_norm': 1.8945964574813843, 'learning_rate': 0.000182387178439665, 'epoch': 0.93}
+{'loss': 0.1423, 'grad_norm': 1.316643238067627, 'learning_rate': 0.00017914808590030088, 'epoch': 1.0}

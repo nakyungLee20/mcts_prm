@@ -174,8 +174,8 @@ class ContriRewardvLLM:
     def math_reward_dataset_vllm(self, *, split: str = "train", start: int = 0, take: int | None):
         sent_split = re.compile(r'\.(?!\d)(?=\s|$)')
         ds = load_dataset("HuggingFaceTB/MATH", "all", split=split)
-        # ds = ds.select(range(start, start + take)) if take else ds
-        ds = ds.select(range(start, len(ds)))
+        ds = ds.select(range(start, take)) if take else ds
+        # ds = ds.select(range(start, len(ds)))
         print("Generated dataset size: ", len(ds))
         
         for sample in tqdm(ds, desc="Building MATH contri reward-dataset"):

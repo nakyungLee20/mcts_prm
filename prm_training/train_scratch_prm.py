@@ -15,7 +15,7 @@ from prm_trainer import PRMTrainer
 from prm_dataset import StepwisePRMDataset
 
 os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"  # Arrange GPU devices starting from 0
-os.environ["CUDA_VISIBLE_DEVICES"]= "3"
+os.environ["CUDA_VISIBLE_DEVICES"]= "2"
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 def main():
@@ -37,10 +37,10 @@ def main():
     cfg = PRMConfig()
     print(f"Using model: {model_name} for PRM training")
 
-    with open("/home/leena/ccc_eval/mcts_prm/cmi_samples/total_gsm8k_merge_mistral.json", "r") as file:
+    with open("/home/leena/ccc_eval/mcts_prm/cmi_samples/total_gsm8k_merge_mistral_incorrect.json", "r") as file:
         gsm8k_raw = json.load(file)
     
-    full_ds = StepwisePRMDataset(gsm8k_raw, tokenizer, cfg.max_new_tokens, reward_type="cmi")
+    full_ds = StepwisePRMDataset(gsm8k_raw, tokenizer, cfg.max_new_tokens, reward_type=cfg.reward_type)
     print(f"Full dataset size: {len(full_ds)}") 
 
     indices = list(range(len(full_ds)))

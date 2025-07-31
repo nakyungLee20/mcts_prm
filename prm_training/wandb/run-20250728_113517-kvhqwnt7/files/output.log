@@ -1,0 +1,92 @@
+  0%|                                                                                                                                                                 | 0/3008 [00:00<?, ?it/s]`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`...
+/home/leena/anaconda3/envs/prm/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py:838: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.5 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  return fn(*args, **kwargs)
+  7%|█████████▋                                                                                                                                        | 200/3008 [1:24:04<20:13:06, 25.92s/it]We detected that you are passing `past_key_values` as a tuple and this is deprecated and will be removed in v4.43. Please use an appropriate `Cache` class (https://huggingface.co/docs/transformers/v4.41.3/en/internal/generation_utils#transformers.Cache)
+{'loss': 0.2818, 'grad_norm': 8.297450065612793, 'learning_rate': 6.490066225165563e-05, 'epoch': 0.07}
+{'loss': 0.3178, 'grad_norm': 22.609256744384766, 'learning_rate': 0.00013112582781456955, 'epoch': 0.13}
+{'loss': 0.2782, 'grad_norm': 5.360267162322998, 'learning_rate': 0.00019735099337748346, 'epoch': 0.2}
+{'loss': 0.1693, 'grad_norm': 1.2629953622817993, 'learning_rate': 0.00019986073854859012, 'epoch': 0.27}
+ 20%|█████████████████████████████                                                                                                                     | 600/3008 [4:58:48<17:20:12, 25.92s/it]/home/leena/anaconda3/envs/prm/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py:838: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.5 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  return fn(*args, **kwargs)                                                                                                                                                                   
+{'eval_loss': 0.13921065628528595, 'eval_runtime': 647.8674, 'eval_samples_per_second': 4.124, 'eval_steps_per_second': 0.516, 'epoch': 0.27}
+{'loss': 0.1513, 'grad_norm': 0.6313090324401855, 'learning_rate': 0.0001994199290670147, 'epoch': 0.33}
+{'loss': 0.154, 'grad_norm': 0.9970943927764893, 'learning_rate': 0.00019867866189940056, 'epoch': 0.4}
+{'loss': 0.1476, 'grad_norm': 0.2372758686542511, 'learning_rate': 0.00019763917723461134, 'epoch': 0.47}
+{'loss': 0.1446, 'grad_norm': 0.6927520036697388, 'learning_rate': 0.00019630461650676378, 'epoch': 0.53}
+{'eval_loss': 0.1308191567659378, 'eval_runtime': 647.7606, 'eval_samples_per_second': 4.125, 'eval_steps_per_second': 0.516, 'epoch': 0.53}
+{'loss': 0.1382, 'grad_norm': 1.0563136339187622, 'learning_rate': 0.00019467901290147702, 'epoch': 0.6}
+{'loss': 0.1377, 'grad_norm': 0.4670187830924988, 'learning_rate': 0.00019276727916715312, 'epoch': 0.67}
+{'loss': 0.1363, 'grad_norm': 0.4049947261810303, 'learning_rate': 0.00019057519276812472, 'epoch': 0.73}
+{'loss': 0.1405, 'grad_norm': 1.7641446590423584, 'learning_rate': 0.00018810937842453828, 'epoch': 0.8}
+{'eval_loss': 0.13793212175369263, 'eval_runtime': 647.2653, 'eval_samples_per_second': 4.128, 'eval_steps_per_second': 0.516, 'epoch': 0.8}
+ 40%|█████████████████████████████████▌                                                  | 1200/3008 [12:41:21<26:16:01, 52.30s/it]/home/leena/anaconda3/envs/prm/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py:838: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.5 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+{'loss': 0.134, 'grad_norm': 1.4512996673583984, 'learning_rate': 0.00018537728809173945, 'epoch': 0.86}
+{'loss': 0.13, 'grad_norm': 1.8716076612472534, 'learning_rate': 0.000182387178439665, 'epoch': 0.93}
+{'loss': 0.1407, 'grad_norm': 1.4916828870773315, 'learning_rate': 0.00017914808590030088, 'epoch': 1.0}
+{'loss': 0.1185, 'grad_norm': 0.5217764973640442, 'learning_rate': 0.00017566979935861585, 'epoch': 1.06}
+  return fn(*args, **kwargs)                                                                                                                                                                   
+{'eval_loss': 0.12729628384113312, 'eval_runtime': 706.5642, 'eval_samples_per_second': 3.782, 'eval_steps_per_second': 0.473, 'epoch': 1.06}
+{'loss': 0.122, 'grad_norm': 1.3903213739395142, 'learning_rate': 0.00017196283056950158, 'epoch': 1.13}
+{'loss': 0.1216, 'grad_norm': 0.3733712136745453, 'learning_rate': 0.00016803838239012206, 'epoch': 1.2}
+{'loss': 0.1205, 'grad_norm': 1.1197757720947266, 'learning_rate': 0.00016390831492367816, 'epoch': 1.26}
+{'loss': 0.1193, 'grad_norm': 2.478954792022705, 'learning_rate': 0.0001595851096769039, 'epoch': 1.33}
+{'eval_loss': 0.12934046983718872, 'eval_runtime': 1299.2572, 'eval_samples_per_second': 2.057, 'eval_steps_per_second': 0.257, 'epoch': 1.33}
+{'loss': 0.1258, 'grad_norm': 2.3459558486938477, 'learning_rate': 0.00015508183183961499, 'epoch': 1.4}
+{'loss': 0.1245, 'grad_norm': 0.4412398934364319, 'learning_rate': 0.00015041209080030398, 'epoch': 1.46}
+{'loss': 0.1186, 'grad_norm': 1.1001418828964233, 'learning_rate': 0.0001455899990171092, 'epoch': 1.53}
+{'loss': 0.1186, 'grad_norm': 2.7009241580963135, 'learning_rate': 0.00014063012936845287, 'epoch': 1.6}
+{'eval_loss': 0.12598009407520294, 'eval_runtime': 1298.6697, 'eval_samples_per_second': 2.057, 'eval_steps_per_second': 0.257, 'epoch': 1.6}
+ 60%|██████████████████████████████████████████████████▎                                 | 1800/3008 [22:25:03<17:24:27, 51.88s/it]/home/leena/anaconda3/envs/prm/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py:838: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.5 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+{'loss': 0.1199, 'grad_norm': 1.0002894401550293, 'learning_rate': 0.00013554747111224014, 'epoch': 1.66}
+{'loss': 0.1165, 'grad_norm': 1.5550371408462524, 'learning_rate': 0.0001303573845867142, 'epoch': 1.73}
+{'loss': 0.121, 'grad_norm': 0.9939520359039307, 'learning_rate': 0.00012507555478986722, 'epoch': 1.8}
+{'loss': 0.1249, 'grad_norm': 0.7269787788391113, 'learning_rate': 0.00011971794397769464, 'epoch': 1.86}
+  return fn(*args, **kwargs)                                                                                                       
+{'eval_loss': 0.12649381160736084, 'eval_runtime': 1295.4338, 'eval_samples_per_second': 2.063, 'eval_steps_per_second': 0.258, 'epoch': 1.86}
+{'loss': 0.1144, 'grad_norm': 2.1107709407806396, 'learning_rate': 0.00011430074342454587, 'epoch': 1.93}
+{'loss': 0.1281, 'grad_norm': 2.437600612640381, 'learning_rate': 0.00010884032449135697, 'epoch': 2.0}
+{'loss': 0.0808, 'grad_norm': 1.071153163909912, 'learning_rate': 0.00010335318914964289, 'epoch': 2.06}
+{'loss': 0.0838, 'grad_norm': 0.7625075578689575, 'learning_rate': 9.785592011076962e-05, 'epoch': 2.13}
+{'eval_loss': 0.13418903946876526, 'eval_runtime': 1294.9574, 'eval_samples_per_second': 2.063, 'eval_steps_per_second': 0.258, 'epoch': 2.13}
+{'loss': 0.0722, 'grad_norm': 0.952972948551178, 'learning_rate': 9.236513071122262e-05, 'epoch': 2.19}
+{'loss': 0.08, 'grad_norm': 1.497153401374817, 'learning_rate': 8.68974147053226e-05, 'epoch': 2.26}
+{'loss': 0.0737, 'grad_norm': 0.7495900988578796, 'learning_rate': 8.146929611712048e-05, 'epoch': 2.33}
+{'loss': 0.0774, 'grad_norm': 0.5390873551368713, 'learning_rate': 7.609717930302506e-05, 'epoch': 2.39}
+{'eval_loss': 0.13625507056713104, 'eval_runtime': 1294.9929, 'eval_samples_per_second': 2.063, 'eval_steps_per_second': 0.258, 'epoch': 2.39}
+ 80%|███████████████████████████████████████████████████████████               | 2400/3008 [32:10:12<8:46:00, 51.91s/it]/home/leena/anaconda3/envs/prm/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py:838: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.5 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+{'loss': 0.0757, 'grad_norm': 1.0258499383926392, 'learning_rate': 7.079729937607904e-05, 'epoch': 2.46}
+{'loss': 0.0689, 'grad_norm': 0.9818981885910034, 'learning_rate': 6.558567314170636e-05, 'epoch': 2.53}
+{'loss': 0.0708, 'grad_norm': 0.7874212861061096, 'learning_rate': 6.0478050693208995e-05, 'epoch': 2.59}
+{'loss': 0.07, 'grad_norm': 0.5317570567131042, 'learning_rate': 5.548986781329599e-05, 'epoch': 2.66}
+  return fn(*args, **kwargs)                                                                                                  
+{'eval_loss': 0.1428530365228653, 'eval_runtime': 1302.3981, 'eval_samples_per_second': 2.052, 'eval_steps_per_second': 0.256, 'epoch': 2.66}
+{'loss': 0.0698, 'grad_norm': 1.2593094110488892, 'learning_rate': 5.0636199325493286e-05, 'epoch': 2.73}
+{'loss': 0.0637, 'grad_norm': 0.5637775659561157, 'learning_rate': 4.593171353641026e-05, 'epoch': 2.79}
+{'loss': 0.0678, 'grad_norm': 0.6968661546707153, 'learning_rate': 4.139062790654458e-05, 'epoch': 2.86}
+{'loss': 0.0697, 'grad_norm': 0.6903952360153198, 'learning_rate': 3.702666608359201e-05, 'epoch': 2.93}
+{'eval_loss': 0.1393601894378662, 'eval_runtime': 1302.7475, 'eval_samples_per_second': 2.051, 'eval_steps_per_second': 0.256, 'epoch': 2.93}
+{'loss': 0.0677, 'grad_norm': 0.845065176486969, 'learning_rate': 3.285301642811156e-05, 'epoch': 2.99}
+{'loss': 0.0316, 'grad_norm': 2.798677682876587, 'learning_rate': 2.888229215688566e-05, 'epoch': 3.06}
+{'loss': 0.0242, 'grad_norm': 1.1318110227584839, 'learning_rate': 2.5126493224426785e-05, 'epoch': 3.13}
+{'loss': 0.0259, 'grad_norm': 0.35314634442329407, 'learning_rate': 2.159697005782798e-05, 'epoch': 3.19}
+{'eval_loss': 0.1465362161397934, 'eval_runtime': 1302.8906, 'eval_samples_per_second': 2.051, 'eval_steps_per_second': 0.256, 'epoch': 3.19}
+100%|███████████████████████████████████████████████████████████████████████████▊| 3000/3008 [41:54:18<06:54, 51.81s/it]/home/leena/anaconda3/envs/prm/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py:838: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.5 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+{'loss': 0.0265, 'grad_norm': 0.4220699071884155, 'learning_rate': 1.8304389254555244e-05, 'epoch': 3.26}
+{'loss': 0.0248, 'grad_norm': 0.5638320446014404, 'learning_rate': 1.5258701346846215e-05, 'epoch': 3.32}
+{'loss': 0.0398, 'grad_norm': 0.36839917302131653, 'learning_rate': 1.2469110730134848e-05, 'epoch': 3.39}
+{'loss': 0.029, 'grad_norm': 0.7680056095123291, 'learning_rate': 9.944047846381366e-06, 'epoch': 3.46}
+  return fn(*args, **kwargs)                                                                                            
+{'eval_loss': 0.1452757567167282, 'eval_runtime': 1301.8624, 'eval_samples_per_second': 2.052, 'eval_steps_per_second': 0.257, 'epoch': 3.46}
+{'loss': 0.0248, 'grad_norm': 0.5136874914169312, 'learning_rate': 7.69114370637284e-06, 'epoch': 3.52}
+{'loss': 0.024, 'grad_norm': 0.4643547534942627, 'learning_rate': 5.7172068279901734e-06, 'epoch': 3.59}
+{'loss': 0.0254, 'grad_norm': 0.41184157133102417, 'learning_rate': 4.028202660137126e-06, 'epoch': 3.66}
+{'loss': 0.0259, 'grad_norm': 0.5014328360557556, 'learning_rate': 2.6292355545140645e-06, 'epoch': 3.72}
+{'eval_loss': 0.14494001865386963, 'eval_runtime': 1295.9209, 'eval_samples_per_second': 2.062, 'eval_steps_per_second': 0.258, 'epoch': 3.72}
+{'loss': 0.0251, 'grad_norm': 1.6482082605361938, 'learning_rate': 1.5245333397197803e-06, 'epoch': 3.79}
+{'loss': 0.0254, 'grad_norm': 0.5309029817581177, 'learning_rate': 7.174345443001551e-07, 'epoch': 3.86}
+{'loss': 0.0237, 'grad_norm': 0.5823266506195068, 'learning_rate': 2.1037830735690655e-07, 'epoch': 3.92}
+{'loss': 0.0255, 'grad_norm': 0.8531765341758728, 'learning_rate': 4.897007207649295e-09, 'epoch': 3.99}
+{'eval_loss': 0.14511501789093018, 'eval_runtime': 1292.0304, 'eval_samples_per_second': 2.068, 'eval_steps_per_second': 0.259, 'epoch': 3.99}
+100%|████████████████████████████████████████████████████████████████████████████| 3008/3008 [42:00:55<00:00, 75.45s/it]There were unexpected keys in the checkpoint model loaded: ['backbone.base_model.model.model.layers.0.self_attn.q_proj.base_layer.weight.absmax', 'backbone.base_model.model.model.layers.0.self_attn.q_proj.base_layer.weight.nested_absmax', 'backbone.base_model.model.model.layers.0.self_attn.q_proj.base_layer.weight.nested_quant_map', 'backbone.base_model.model.model.layers.0.self_attn.q_proj.base_layer.weight.quant_map', 'backbone.base_model.model.model.layers.0.self_attn.q_proj.base_layer.weight.quant_state.bitsandbytes__nf4', 'backbone.base_model.model.model.layers.0.self_attn.k_proj.base_layer.weight.absmax', 'backbone.base_model.model.model.layers.0.self_attn.k_proj.base_layer.weight.nested_absmax', 'backbone.base_model.model.model.layers.0.self_attn.k_proj.base_layer.weight.nested_quant_map', 'backbone.base_model.model.model.layers.0.self_attn.k_proj.base_layer.weight.quant_map', 'backbone.base_model.model.model.layers.0.self_attn.k_proj.base_layer.weight.quant_state.bitsandbytes__nf4', 'backbone.base_model.model.model.layers.0.self_attn.v_proj.base_layer.weight.absmax', 'backbone.base_model.model.model.layers.0.self_attn.v_proj.base_layer.weight.nested_absmax', 'backbone.base_model.model.model.layers.0.self_attn.v_proj.base_layer.weight.nested_quant_map', 'backbone.base_model.model.model.layers.0.self_attn.v_proj.base_layer.weight.quant_map', 'backbone.base_model.model.model.layers.0.self_attn.v_proj.base_layer.weight.quant_state.bitsandbytes__nf4', 'backbone.base_model.model.model.layers.0.self_attn.o_proj.base_layer.weight.absmax', 'backbone.base_model.model.model.layers.0.self_attn.o_proj.base_layer.weight.nested_absmax', 'backbone.base_model.model.model.layers.0.self_attn.o_proj.base_layer.weight.nested_quant_map', 'backbone.base_model.model.model.layers.0.self_attn.o_proj.base_layer.weight.quant_map', 'backbone.base_model.model.model.layers.0.self_attn.o_proj.base_layer.weight.quant_state.bitsandbytes__nf4', 'backbone.base_model.model.model.layers.0.mlp.gate_proj.weight.absmax', 'backbone.base_model.model.model.layers.0.mlp.gate_proj.weight.nested_absmax', 'backbone.base_model.model.model.layers.0.mlp.gate_proj.weight.nested_quant_map', 'backbone.base_model.model.model.layers.0.mlp.gate_proj.weight.quant_map', 'backbone.base_model.model.model.layers.0.mlp.gate_proj.weight.quant_state.bitsandbytes__nf4', 'backbone.base_model.model.model.layers.0.mlp.up_proj.weight.absmax', 'backbone.base_model.model.model.layers.0.mlp.up_proj.weight.nested_absmax', 'backbone.base_model.model.model.layers.0.mlp.up_proj.weight.nested_quant_map', 'backbone.base_model.model.model.layers.0.mlp.up_proj.weight.quant_map', 'backbone.base_model.model.model.layers.0.mlp.up_proj.weight.quant_state.bitsandbytes__nf4', 'backbone.base_model.model.model.layers.0.mlp.down_proj.weight.absmax', 'backbone.base_model.model.model.layers.0.mlp.down_proj.weight.nested_absmax', 'backbone.base_model.model.model.layers.0.mlp.down_proj.weight.nested_quant_map', 'backbone.base_model.model.model.layers.0.mlp.down_proj.weight.quant_map', 'backbone.base_model.model.model.layers.0.mlp.down_proj.weight.quant_state.bitsandbytes__nf4', 'backbone.base_model.model.model.layers.1.self_attn.q_proj.base_layer.weight.absmax', 'backbone.base_model.model.model.layers.1.self_attn.q_proj.base_layer.weight.nested_absmax', 'backbone.base_model.model.model.layers.1.self_attn.q_proj.base_layer.weight.nested_quant_map', 'backbone.base_model.model.model.layers.1.self_attn.q_proj.base_layer.weight.quant_map', 'backbone.base_model.model.model.layers.1.self_attn.q_proj.base_layer.weight.quant_state.bitsandbytes__nf4', 'backbone.base_model.model.model.layers.1.self_attn.k_proj.base_layer.weight.absmax', 'backbone.base_model.model.model.layers.1.self_attn.k_proj.base_layer.weight.nested_absmax', 'backbone.base_model.model.model.layers.1.self_attn.k_proj.base_layer.weight.nested_quant_map', 'backbone.base_model.model.model.layers.1.self_attn.k_proj.base_layer.weight.
+100%|████████████████████████████████████████████████████████████████████████████| 3008/3008 [42:01:48<00:00, 50.30s/it]
+{'train_runtime': 151310.6529, 'train_samples_per_second': 0.636, 'train_steps_per_second': 0.02, 'train_loss': 0.09828735273232327, 'epoch': 4.0}

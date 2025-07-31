@@ -1,3 +1,47 @@
 [Epoch 1/20] train=0.1602  val=0.1543
 [CKPT] Saved ⇒ checkpoints/contri/test_0723/best_prm.pt
 [Best] New best validation loss: 0.1543
+[Epoch 2/20] train=0.1574  val=0.1553
+[Early-Stopping] No improvement for 1/8 epochs
+[Epoch 3/20] train=0.1567  val=0.1545
+[Early-Stopping] No improvement for 2/8 epochs
+[Epoch 4/20] train=0.1568  val=0.1542
+[CKPT] Saved ⇒ checkpoints/contri/test_0723/best_prm.pt
+[Best] New best validation loss: 0.1542
+[Epoch 5/20] train=0.1566  val=0.1540
+[CKPT] Saved ⇒ checkpoints/contri/test_0723/best_prm.pt
+[Best] New best validation loss: 0.1540
+[Epoch 6/20] train=0.1563  val=0.1545
+[Early-Stopping] No improvement for 1/8 epochs
+[Epoch 7/20] train=0.1565  val=0.1541
+[Early-Stopping] No improvement for 2/8 epochs
+[Epoch 8/20] train=0.1565  val=0.1541
+[Early-Stopping] No improvement for 3/8 epochs
+[Epoch 9/20] train=0.1562  val=0.1541
+[Early-Stopping] No improvement for 4/8 epochs
+[Epoch 10/20] train=0.1563  val=0.1540
+[CKPT] Saved ⇒ checkpoints/contri/test_0723/best_prm.pt
+[Best] New best validation loss: 0.1540
+[Epoch 11/20] train=0.1562  val=0.1540
+[Early-Stopping] No improvement for 1/8 epochs
+[Epoch 12/20] train=0.1561  val=0.1546
+[Early-Stopping] No improvement for 2/8 epochs
+[Epoch 13/20] train=0.1561  val=0.1545
+[Early-Stopping] No improvement for 3/8 epochs
+[Epoch 14/20] train=0.1561  val=0.1540
+[CKPT] Saved ⇒ checkpoints/contri/test_0723/best_prm.pt
+[Best] New best validation loss: 0.1540
+[Epoch 15/20] train=0.1560  val=0.1542
+[Early-Stopping] No improvement for 1/8 epochs
+[Epoch 16/20] train=0.1561  val=0.1542
+[Early-Stopping] No improvement for 2/8 epochs
+[Epoch 17/20] train=0.1562  val=0.1540
+[Early-Stopping] No improvement for 3/8 epochs
+[Epoch 18/20] train=0.1560  val=0.1541
+[Early-Stopping] No improvement for 4/8 epochs
+[Epoch 19/20] train=0.1561  val=0.1544
+[Early-Stopping] No improvement for 5/8 epochs
+[Epoch 20/20] train=0.1561  val=0.1541
+[Early-Stopping] No improvement for 6/8 epochs
+[CKPT] Saved ⇒ checkpoints/contri/test_0723/last_prm.pt
+PRM Training complete. Loss history: {'train': [0.16015299477000186, 0.1573846511483351, 0.15667457001759333, 0.15675133100136163, 0.15660814089859101, 0.15633576348463588, 0.15648589971812166, 0.15647287851080616, 0.15618176316406499, 0.15625650906301242, 0.1561679730310719, 0.15614681764248203, 0.1561360980602021, 0.15611659020106208, 0.15600837387659766, 0.15610714356831096, 0.1561531080230278, 0.15598612682933502, 0.15608572828127665, 0.1560841140317473], 'val': [0.1542811527670849, 0.15526824754973254, 0.154534617350215, 0.1541982079368262, 0.15400155775603794, 0.154544588355791, 0.15414058922656945, 0.15406986441285836, 0.15413788617366836, 0.15398903838580563, 0.1540458340729986, 0.15458573409844012, 0.15450107989211878, 0.15396924183837005, 0.15419762235667026, 0.1541680194260109, 0.15401315077074937, 0.15405709660124212, 0.15444399567232245, 0.154058379520263]}
