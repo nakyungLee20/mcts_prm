@@ -6,7 +6,7 @@ class PRMConfig:
     num_rollouts:           int = 8      
     samples_per_question:   int = 1
     use_llm:                bool = True  # Use llm for masking
-    reward_type:            str = "ori"  # ori, contri, mi, cmi, orimi
+    reward_type:            str = "contri"  # ori, contri, mi, cmi, orimi
     # PRM Model config 
     hidden_size:        int = 512      # 256-1024 범위에서 적절
     num_layers:         int = 4        # 2-4 범위에서 적절
@@ -20,12 +20,12 @@ class PRMConfig:
     dataset_size:       int = 0
     warmup_steps:       int = 40       # 22 → 50으로 증가 (더 안정적)
     grad_clip:          float = 1.0    # 적절
-    epochs:             int = 20
+    epochs:             int = 12
     # Misc config
     use_wandb:          bool = True
     wandb_project:      str = "mc_prm"
-    run_name:           str = "total_gsm8k_cmi"
-    checkpoint_dir:     str = "./checkpoints/cmi/test_0723"
+    run_name:           str = "gsm8k_scrat_contri_incorr"
+    checkpoint_dir:     str = "./checkpoints/scratch/contri/incorr"
     seed:               int = 42
     # Inference config
     num_candidates:     int = 4
