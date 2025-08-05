@@ -1,0 +1,7 @@
+{"time":"2025-08-05T13:31:27.636546104+09:00","level":"INFO","msg":"stream: starting","core version":"0.20.1","symlink path":"/data/users/leena/mcts_prm/prm_training/wandb/run-20250805_133127-yoyur7gg/logs/debug-core.log"}
+{"time":"2025-08-05T13:31:28.602320914+09:00","level":"INFO","msg":"stream: created new stream","id":"yoyur7gg"}
+{"time":"2025-08-05T13:31:28.602402983+09:00","level":"INFO","msg":"stream: started","id":"yoyur7gg"}
+{"time":"2025-08-05T13:31:28.602434057+09:00","level":"INFO","msg":"handler: started","stream_id":"yoyur7gg"}
+{"time":"2025-08-05T13:31:28.602424235+09:00","level":"INFO","msg":"writer: Do: started","stream_id":"yoyur7gg"}
+{"time":"2025-08-05T13:31:28.602494507+09:00","level":"INFO","msg":"sender: started","stream_id":"yoyur7gg"}
+{"time":"2025-08-05T13:31:28.937858911+09:00","level":"INFO","msg":"Starting system monitor"}

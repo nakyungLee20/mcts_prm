@@ -15,11 +15,11 @@ from prm_trainer import PRMTrainer
 from prm_dataset import StepwisePRMDataset
 
 os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"  # Arrange GPU devices starting from 0
-os.environ["CUDA_VISIBLE_DEVICES"]= "2"
+os.environ["CUDA_VISIBLE_DEVICES"]= "3"
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 def main():
-    model_name = "Qwen/Qwen2.5-Math-7B-Instruct" # PRM training용 작은 모델 사용 (dataset generation과 독립적)
+    model_name = "Qwen/Qwen2.5-Math-7B" # PRM training용 작은 모델 사용 (dataset generation과 독립적)
     bnb_config = BitsAndBytesConfig(
         load_in_4bit=True,
         bnb_4bit_quant_type="nf4",
@@ -37,7 +37,7 @@ def main():
     cfg = PRMConfig()
     print(f"Using model: {model_name} for PRM training")
 
-    with open("/home/leena/ccc_eval/mcts_prm/cmi_samples/total_gsm8k_merge_mistral_incorrect.json", "r") as file:
+    with open("/home/leena/ccc_eval/mcts_prm/cmi_samples/total_gsm8k_merge_mistral.json", "r") as file:
         gsm8k_raw = json.load(file)
     
     full_ds = StepwisePRMDataset(gsm8k_raw, tokenizer, cfg.max_new_tokens, reward_type=cfg.reward_type)

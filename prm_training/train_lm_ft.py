@@ -27,7 +27,7 @@ from torch.utils.data import Subset
 from prm_dataset import StepwisePRMDataset   
 
 os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"  # Arrange GPU devices starting from 0
-os.environ["CUDA_VISIBLE_DEVICES"]= "2"
+os.environ["CUDA_VISIBLE_DEVICES"]= "3"
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 os.environ["WANDB_PROJECT"]="mc_prm"
@@ -148,7 +148,6 @@ class FTLM(nn.Module):
             'module_stats': module_stats
         }
 
-
 # Load Dataset 
 @dataclass
 class PRMCollator:
@@ -177,7 +176,7 @@ class PRMCollator:
 
 def main():
     # Load Model
-    model_name = "Qwen/Qwen2.5-Math-7B-Instruct"
+    model_name = "Qwen/Qwen2.5-Math-7B"
     tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True)
     if tokenizer.pad_token_id is None:
         tokenizer.pad_token = tokenizer.eos_token
@@ -196,7 +195,7 @@ def main():
         gsm8k_raw = json.load(file)
 
     # Use the new CausalLM PRM dataset
-    reward_type = "contri"
+    reward_type = "cmi"
     print(f"Load Dataset with {reward_type}")
     full_ds = StepwisePRMDataset(gsm8k_raw, tokenizer, reward_type=reward_type)
     indices = list(range(len(full_ds)))
@@ -210,12 +209,12 @@ def main():
     print("Finish Loading Dataset")
 
     # Load Trainer
-    output_dir = f"/home/leena/ccc_eval/mcts_prm/prm_training/checkpoints/pt_lm/{reward_type}"
+    output_dir = f"/home/leena/ccc_eval/mcts_prm/checkpoints/pt_lm/{reward_type}"
     training_args = TrainingArguments(
         output_dir=output_dir,
-        num_train_epochs=3,
-        per_device_train_batch_size=8,
-        per_device_eval_batch_size=8,
+        num_train_epochs=2,
+        per_device_train_batch_size=16,
+        per_device_eval_batch_size=16,
         gradient_accumulation_steps=4,
         learning_rate=2e-4,
         lr_scheduler_type="cosine",
@@ -233,7 +232,7 @@ def main():
         seed=42,
         bf16=True,  # bf16=True
         report_to="wandb",
-        run_name=f"qwen_lm7b_ft_gsm8k_{reward_type}",
+        run_name=f"qwen_lm_ft_gsm8k_{reward_type}",
     )
 
     trainer = Trainer(

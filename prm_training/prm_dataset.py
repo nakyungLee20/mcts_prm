@@ -46,6 +46,9 @@ class StepwisePRMDataset(Dataset):
                 rewards = [c + m for c, m in zip(e["contributions"], e["mi_filtered"])]
             elif self.reward_type == "orimi":
                 rewards = [o + m for o, m in zip(o_rewards, e["mi_filtered"])]
+            elif self.reward_type == "pav":
+                contributions = e["contributions"]
+                rewards = [contributions[0]] + [contributions[i] - contributions[i-1] for i in range(1, len(contributions))]
             else:
                 rewards = o_rewards
 

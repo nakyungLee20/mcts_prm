@@ -6,11 +6,11 @@ class PRMConfig:
     num_rollouts:           int = 8      
     samples_per_question:   int = 1
     use_llm:                bool = True  # Use llm for masking
-    reward_type:            str = "contri"  # ori, contri, mi, cmi, orimi
+    reward_type:            str = "cmi"  # ori, contri, mi, cmi, orimi
     # PRM Model config 
     hidden_size:        int = 512      # 256-1024 범위에서 적절
     num_layers:         int = 4        # 2-4 범위에서 적절
-    dropout:            float = 0.2    # 0.1-0.3 범위에서 적절
+    dropout:            float = 0.1    # 0.1-0.3 범위에서 적절
     # PRMTrainer config 
     batch_size:         int = 32       # 12 → 16으로 증가 (더 안정적)
     learning_rate:      float = 3e-4   # 5e-4 → 3e-4로 감소 (더 안정적)
@@ -24,8 +24,8 @@ class PRMConfig:
     # Misc config
     use_wandb:          bool = True
     wandb_project:      str = "mc_prm"
-    run_name:           str = "gsm8k_scrat_contri_incorr"
-    checkpoint_dir:     str = "./checkpoints/scratch/contri/incorr"
+    run_name:           str = "gsm8k_scrat_cmi"
+    checkpoint_dir:     str = "/home/leena/ccc_eval/mcts_prm/checkpoints/scratch/cmi"
     seed:               int = 42
     # Inference config
     num_candidates:     int = 4

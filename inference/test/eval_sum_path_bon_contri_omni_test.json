@@ -1,0 +1,9 @@
+{
+  "dataset": "omni",
+  "search_mode": "path_bon",
+  "N": 8,
+  "correct": 0,
+  "total": 2,
+  "accuracy": 0.0,
+  "accuracy_str": "0.000%"
+}
