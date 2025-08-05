@@ -40,7 +40,7 @@ class AnswerExtractor:
             except (SyntaxError, ValueError):
                 return self._strip(txt)
         # 3) Omni  (그대로)
-        if ds == "omni":
+        if ds == "omni" or ds == "aime":
             return self._strip(txt)
         # 4) Math 또는 그 밖 → 공통 pred-extract 로 처리
         return self.extract_pred_answer(txt)

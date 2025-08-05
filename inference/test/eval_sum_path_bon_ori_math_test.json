@@ -1,0 +1,9 @@
+{
+  "dataset": "math",
+  "search_mode": "path_bon",
+  "N": 8,
+  "correct": 2,
+  "total": 2,
+  "accuracy": 1.0,
+  "accuracy_str": "100.000%"
+}
